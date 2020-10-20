@@ -1,3 +1,7 @@
+//-------------------------------------------
+// Functions not belong to other js stay here
+//-------------------------------------------
+
 const getUserById = (id) => {
   return user.find((data) => data.id === id);
 };

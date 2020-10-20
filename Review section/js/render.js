@@ -1,5 +1,6 @@
-const data = getHotelReviews();
-console.log("review Data ", data);
+//----------------------------------------
+// Render data here
+//----------------------------------------
 const showReviews = () => {
   reviewDisplay.innerHTML = "";
   for (let review of getHotelReviews()) {
@@ -10,4 +11,3 @@ const showReviews = () => {
     `;
   }
 };
-showReviews();

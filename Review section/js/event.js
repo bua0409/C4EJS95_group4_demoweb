@@ -1,3 +1,7 @@
+//-----------------------------------------
+//Get elements and add event listener here
+//-----------------------------------------
+
 const reviewDisplay = document.getElementById("review-display"),
   reviewInput = document.getElementById("review-input"),
   submitBtn = document.getElementById("submit-btn"),
