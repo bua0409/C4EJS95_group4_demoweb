@@ -1,20 +1,4 @@
-const loginBox = document.getElementById("login").value;
-const regBox = document.getElementById("register").value;
-const forgetBox = document.getElementById("forgot").value;
-const loginTab = document.getElementById("lt").value;
-const regTab = document.getElementById("rt").value;
-const emailLogin = document.getElementById("se").value;
-const passwordLogin = document.getElementById("sp").value;
-const emailInput = document.getElementById("re").value;
-const passwordInput = document.getElementById("rp").value;
-const passwordRetypeInput = document.getElementById("rrp").value;
-const usernameInput = document.getElementById("un").value;
-const addressInput = document.getElementById("address").value;
-const phoneInput = document.getElementById("phone").value;
-const emailForgot = document.getElementById("fe").value;
-const submitLogin = document.getElementById("submit-login");
-const submitreg = document.getElementById("submit-reg");
-const submitforgot = document.getElementById("submit-f");
+
 
 const pushdata = (data) => {
     Element.listUser.push(data);
