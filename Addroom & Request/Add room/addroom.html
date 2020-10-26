@@ -1,39 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>Add Room</title> 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <head>
+    <title>Add Room</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://cdn.ckeditor.com/4.15.0/standard/ckeditor.js"></script>
-
-</head>
-<body>
+  </head>
+  <body>
     <div class="panel panel-primary">
-        <div class="panel-heading">Nhập thông tin phòng</div>
-        <div class="panel-body">
-            <div class="form-group">
-                <label>Number of person</label>
-                <input type="number" id="numOfPerson" class="form-control" min="1" max="15">     
-            </div>
-            <div class="form-group">
-                <label>Description</label>
-                <input type="text" class="form-control" id="description">
-            </div>
-            <div class="form-group">
-                <label>Price</label>
-                <input type="number" id="price" class="form-control" min="500000" max="10000000" step="1000000" placeholder="VNĐ">     
-            </div>
-            <input type="file" accept="image/*"   onchange="loadFile(event)">
-            <img width="100px" height="100px" id="picture"/>
-            <button id="btn">OK</button>
+      <div class="panel-heading">Nhập thông tin phòng</div>
+      <div class="panel-body">
+        <div class="form-group">
+          <label>Number of person</label>
+          <input
+            type="number"
+            id="numOfPerson"
+            class="form-control"
+            min="1"
+            max="15"
+          />
         </div>
+        <div class="form-group">
+          <label>Description</label>
+          <input type="text" class="form-control" id="description" />
+        </div>
+        <div class="form-group">
+          <label>Price</label>
+          <input
+            type="number"
+            id="price"
+            class="form-control"
+            min="500000"
+            max="10000000"
+            step="1000000"
+            placeholder="VNĐ"
+          />
+        </div>
+        <input type="file" accept="image/*" onchange="loadFile(event)" />
+        <img width="100px" height="100px" id="picture" />
+        <button id="btn">OK</button>
+      </div>
     </div>
-    <script src="event.js"></script>  
-    <script src="getElement.js"></script>  
-    <script src="roomdb.js"></script>  
-    <script src="demoPicture.js"></script>    
-</body>
+    <script src="/Addroom & Request/Add room/js/getElement.js"></script>
+    <script src="/Addroom & Request/Add room/js/event.js"></script>
+    <script src="/Addroom & Request/Add room/js/roomdb.js"></script>
+    <script src="/Addroom & Request/Add room/js/demoPicture.js"></script>
+  </body>
 </html>
