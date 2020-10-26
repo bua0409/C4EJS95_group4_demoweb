@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="reg.css">
+
+    <script src="data.js"></script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="cont">
+        <div id="register" class="comm">
+          <h3>Register</h3>
+          <input id="un" type="text" class="reg-field" placeholder="User Name" required />
+          <input id="re" type="email" class="reg-field" placeholder="Email" required />
+          <input id="rp" type="password" class="reg-field" placeholder="Password" required />
+          <input
+            id="rrp"
+            type="password"
+            class="reg-field"
+            placeholder="Re write Password"
+            required
+          />
+          
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            class="reg-field"
+            placeholder="Phone: 123-45-67890"
+            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+            required
+          />
+          <div>
+            Bằng việc nhấn vào nút Xác nhận bên dưới, tức là bạn đã đọc và chấp
+            nhận các điều khoản và quy định của chúng tôi
+          </div>
+          <input type="button" id="submit-reg"  value="Xác nhận" />
+        </div>
+      </div>
+    </div>
+    <script src="getElementById.js"></script>
+    <script src="common.js"></script>
+    <script src="validate.js"></script>
+    <script src="event.js"></script>
+  </body>
+</html>
