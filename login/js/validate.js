@@ -7,10 +7,9 @@ const validateLogin = () => {
         alert("Enter the wrong email or password")
         
     }
-}   
+}   }
 
 
-validateLogin();
 
 const validateRegiter = () => {
     if (emailInput == "") {
@@ -43,9 +42,9 @@ const validateRegiter = () => {
             }
         }
     }
-}
+}}
 
-validateRegiter();
+
 const validateForgot = () =>{
     for (const user of listUser) {
         if (emailForgot === "") {
@@ -55,6 +54,5 @@ const validateForgot = () =>{
         if(user.email !== emailForgot ){
             alert("Email does not exist")
         }
-}
+}}
 
-validateForgot();
