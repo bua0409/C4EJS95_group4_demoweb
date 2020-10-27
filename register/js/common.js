@@ -6,7 +6,7 @@ const pushdata = (data) => {
         email: emailInput,
         user: usernameInput,
         pass: passwordInput,
-        address: addressInput,
+        address: "",
         phone: phoneInput,
         role: "user",
     };
