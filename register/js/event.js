@@ -20,7 +20,7 @@ const check =()=>{
 }
 
 submitReg.addEventListener("click", async ()=>{
-    const notOK = await register()
+    const notOK = await validateRegister()
     const isOK = await check()
     if(isOK){
         const newUser = {
