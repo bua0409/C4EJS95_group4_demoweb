@@ -1,6 +1,4 @@
-const pushdata = (data) => {
-    Element.listUser.push(data);
-};
+
 const removeClass = (element, className) => {
     element.classList.remove(className);
 };
