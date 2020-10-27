@@ -1,4 +1,4 @@
-function register() {
+function validateRegister() {
 	if (emailInput.value=="") {
 	  alert("Email required.");
 	  return false;
