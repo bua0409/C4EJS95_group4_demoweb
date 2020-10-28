@@ -1,6 +1,7 @@
 const listUser = [
   {
     id: 5,
+    name: "User One",
     email: "username0@gmail.com",
     user: "hungnt",
     pass: "123",
@@ -9,6 +10,7 @@ const listUser = [
   },
   {
     id: 1,
+    name: "User Two",
     email: "username1@gmail.com",
     user: "username1",
     pass: "123tnvn",
@@ -17,6 +19,7 @@ const listUser = [
   },
   {
     id: 2,
+    name: "User Three",
     email: "username2@gmail.com",
     user: "username2",
     pass: "123tnvn1",
@@ -25,6 +28,7 @@ const listUser = [
   },
   {
     id: 3,
+    name: "User Four",
     email: "username3@gmail.com",
     user: "username3",
     pass: "123tnvn2",
@@ -33,6 +37,7 @@ const listUser = [
   },
   {
     id: 4,
+    name: "User Five",
     email: "username4@gmail.com",
     user: "username4",
     pass: "123tnvn3",
@@ -40,3 +45,5 @@ const listUser = [
     role: "hotel",
   },
 ];
+
+const currentLogin = [];
