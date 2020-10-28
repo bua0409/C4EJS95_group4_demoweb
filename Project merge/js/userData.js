@@ -1,8 +1,8 @@
 const listUser = [
   {
     id: 5,
-    name: "User One",
-    email: "username0@gmail.com",
+    name: "Nguyen The Hung",
+    email: "hungnt.se@gmail.com",
     user: "hungnt",
     pass: "123",
     phone: "0123456789",
@@ -45,5 +45,3 @@ const listUser = [
     role: "hotel",
   },
 ];
-
-const currentLogin = [];

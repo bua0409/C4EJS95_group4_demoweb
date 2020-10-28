@@ -11,7 +11,9 @@ const loginFormElement = document.getElementById("login-form");
 const loginButtonElement = document.getElementById("login-form-submit");
 const signupButtonElement = document.getElementById("btn-sign-up");
 const signupButtonSubmitElement = document.getElementById("btn-signup-submit");
-
+const btnShowDetailUserInfoElement = document.getElementById(
+  "btn-popup-detail-user-info"
+);
 /*input field*/
 //login element
 const loginErrorMsgElement = document.getElementById("login-error-msg");
@@ -29,3 +31,6 @@ const resRePasswordElement = document.getElementById("re-rePassword-input");
 const userNameDisplay = document.getElementById("up-name");
 const userEmailDisplay = document.getElementById("up-email");
 const userPhoneDisplay = document.getElementById("up-phone");
+
+// popup
+const detailUserInfoElement = document.getElementById("detail-user-info");

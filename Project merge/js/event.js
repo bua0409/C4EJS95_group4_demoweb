@@ -4,8 +4,7 @@ loginButtonElement.addEventListener("click", () => {
   //validate
   for (const user of listUser) {
     if (user.user === username && user.pass === password) {
-      currentLogin.push(user);
-      console.log(currentLogin);
+      currentUser = user;
       if (user.role === "hotel") {
         addClass(loginPageElement, "d-none");
         // removeClass(); // hotel page
@@ -27,30 +26,36 @@ signupButtonElement.addEventListener("click", () => {
   redirectSignInToSignupScreen();
 });
 
-signupButtonSubmitElement.addEventListener("click", async () => {
-  const resName = resNameElement.value;
-  const resUsername = resUsernameElement.value;
-  const resEmail = resEmailElement.value;
-  const resPhone = resPhoneElement.value;
-  const resPassword = resPasswordElement.value;
-  const resRePassword = resRePasswordElement.value; /// need validate
+signupButtonSubmitElement.addEventListener("click", () => {
+  const registerForm = {
+    resName: resNameElement.value,
+    resUsername: resUsernameElement.value,
+    resEmail: resEmailElement.value,
+    resPhone: resPhoneElement.value,
+    resPassword: resPasswordElement.value,
+    resRePassword: resRePasswordElement.value, /// need validate
+  };
 
-  let reg = await notOK();
-  if (reg) {
+  const isValidateOk = validateRegisterForm(registerForm);
+  if (isValidateOk) {
     const newUser = {
       id: listUser.length + 1,
-      name: resName,
-      email: resEmail,
-      user: resUsername,
-      pass: resPassword,
-      phone: resPhone,
+      name: registerForm.resName,
+      email: registerForm.resEmail,
+      user: registerForm.resUsername,
+      pass: registerForm.resPassword,
+      phone: registerForm.resPhone,
       role: "user",
     };
 
     listUser.push(newUser);
     console.log(listUser);
     alert("Thanks for registration. \nTry to login Now");
-
     redirectSignupToSignInScreen();
   }
+});
+
+btnShowDetailUserInfoElement.addEventListener("click", () => {
+  console.log("current user ===>", currentUser);
+  renderDetailUserInfo(currentUser);
 });
