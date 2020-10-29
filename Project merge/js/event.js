@@ -67,7 +67,7 @@ btnSubmitAddRoomElement.addEventListener("click", () => {
     numOfPerson: addRoomNumberPersonElement.value,
     description: addRoomDescriptionElement.value,
     price: addRoomPriceElement.value,
-    picture: addRoomPictureElement.value,
+    picture: previewPicture.src,
     userId: currentUser.id,
   };
 
