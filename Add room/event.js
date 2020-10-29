@@ -1,4 +1,8 @@
-showIF.addEventListener('click', () => {
+addRoom.addEventListener('click', () => {
+  redirectAddroomToHomePage();
+});
+
+showRoom.addEventListener('click', () => {
   if  (numOfPerson.value == "" || description.value == "" || price.value == "") {
     alert('Bạn phải điền đủ tất cả thông tin');
   }
