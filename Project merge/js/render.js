@@ -52,3 +52,19 @@ const renderDetailUserInfo = (currentUser) => {
                       </div>`;
   detailUserInfoElement.innerHTML = htmlString;
 };
+
+const renderListRoomByHotel = (id) => {
+  let htmlString = "";
+  for (let i = 0; i < listRooms.length; i++) {
+    htmlString += `<tr>
+                      <td>${i + 1}</td>
+                      <td><img
+                          src="${listRooms[i].picture}"
+                          width="100px" height="100px"></td>
+                      <td>${listRooms[i].description}</td>
+                      <td>${listRooms[i].numOfPerson}</td>
+                      <td>${listRooms[i].price}</td>
+                  </tr>`;
+  }
+  renderListRoom.innerHTML = htmlString;
+};

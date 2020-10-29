@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <title>homepage</title> 
+    <title>homepage</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -13,61 +14,68 @@
     <link rel="stylesheet" href="./css/md-bootstrap/mdb.min.css" />
     <link rel="stylesheet" href="./css/md-bootstrap/style.css" />
 </head>
-<body>
-    <body>
-    <div id="hotel-page">
-    <h1>Hotel Rooms</h1>
-    <button id="addroom-btn">AddRoom</button>
-        <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Picture</th>
-                <th scope="col">Description</th>
-                <th scope="col">Number of person</th>
-                <th scope="col">Price</th>
-              </tr>
-            </thead>
-            <tbody id="list-rooms">
-              <tr>
-                <td>1</td>
-                <td><img src="https://d2e5ushqwiltxm.cloudfront.net/wp-content/uploads/sites/95/2016/12/21145908/3546839_XL-3.jpg" width="200px" height="200px"></td>
-                <td>Đẹp</td>
-                <td>2</td>
-                <td>1500000</td>
-              </tr>
-            </tbody>
-          </table>
-</div>
 
-    <div id="addroom-page" class="d-none">
-    <div class="panel panel-primary">
-        <div class="panel-heading">Nhập thông tin phòng</div>
-        <div class="panel-body">
-            <div class="form-group">
-                <label>Number of person</label>
-                <input type="number" id="numOfPerson" class="form-control" min="1" max="15">     
+<body>
+    <div id="hotel-page">
+        <h1>Hotel Rooms</h1>
+        <button id="btn-add-room">AddRoom</button>
+        <div id="list-rooms-screen">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Picture</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Number of person</th>
+                        <th scope="col">Price</th>
+                    </tr>
+                </thead>
+                <tbody id="list-rooms">
+                    <tr>
+                        <td>1</td>
+                        <td><img src="https://d2e5ushqwiltxm.cloudfront.net/wp-content/uploads/sites/95/2016/12/21145908/3546839_XL-3.jpg"
+                                width="200px" height="200px"></td>
+                        <td>Đẹp</td>
+                        <td>2</td>
+                        <td>1500000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="add-room-screen" class="d-none">
+            <div class="panel panel-primary">
+                <div class="panel-heading">Nhập thông tin phòng</div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label>Number of person</label>
+                        <input type="number" id="numOfPerson" class="form-control" min="1" max="15">
+                    </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <input type="text" class="form-control" id="description">
+                    </div>
+                    <div class="form-group">
+                        <label>Price</label>
+                        <input type="number" id="price" class="form-control" min="500000" max="10000000" step="1000000"
+                            placeholder="VNĐ">
+                    </div>
+                    <div class="form-group">
+                        <input type="file" accept="image/*" onchange="loadFile(event)">
+                        <img width="100px" height="100px" id="picture" />
+                    </div>
+                    <button id="btn">OK</button>
+                </div>
             </div>
-            <div class="form-group">
-                <label>Description</label>
-                <input type="text" class="form-control" id="description">
-            </div>
-            <div class="form-group">
-                <label>Price</label>
-                <input type="number" id="price" class="form-control" min="500000" max="10000000" step="1000000" placeholder="VNĐ">     
-            </div>
-            <div class="form-group">
-                <input type="file" accept="image/*"   onchange="loadFile(event)">
-                <img width="100px" height="100px" id="picture"/>
-            </div>
-        <button id="btn">OK</button>
+        </div>
     </div>
-    </div>
+
+
     <script src="roomdb.js"></script>
-    <script src="getElement.js"></script> 
+    <script src="getElement.js"></script>
     <script src="common.js"></script>
     <script src="render.js"></script>
     <script src="event.js"></script>
-    <script src="demoPicture.js"></script>  
+    <script src="demoPicture.js"></script>
 </body>
+
 </html>

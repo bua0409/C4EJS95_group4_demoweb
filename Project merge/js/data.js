@@ -6,7 +6,7 @@ const listUser = [
     user: "hungnt",
     pass: "123",
     phone: "0123456789",
-    role: "user",
+    role: "hotel",
   },
   {
     id: 1,
@@ -43,5 +43,24 @@ const listUser = [
     pass: "123tnvn3",
     phone: "0123456788",
     role: "hotel",
+  },
+];
+
+const listRooms = [
+  {
+    picture:
+      "https://d2e5ushqwiltxm.cloudfront.net/wp-content/uploads/sites/95/2016/12/21105513/MH_Grand_Premium.jpg",
+    numOfPerson: 2,
+    description: "Đẹp",
+    price: 1e6,
+    userId: 5,
+  },
+  {
+    picture:
+      "https://d2e5ushqwiltxm.cloudfront.net/wp-content/uploads/sites/95/2016/12/21145815/3546883_XL-3.jpg",
+    numOfPerson: 5,
+    description: "Đẹp",
+    price: 5e5,
+    userId: 4,
   },
 ];
