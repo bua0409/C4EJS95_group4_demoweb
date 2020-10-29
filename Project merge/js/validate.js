@@ -20,11 +20,11 @@ function validateRegisterForm(registerForm) {
     return false;
   } else {
     for (let i = 0; i < listUser.length; i++) {
-      if (listUser[i].user === registerForm.username) {
+      if (listUser[i].user === registerForm.resUsername) {
         alert("Account already exists");
         return false;
       }
-      if (listUser[i].email === registerForm.email) {
+      if (listUser[i].email === registerForm.resEmail) {
         alert(registerForm.email + " is already register.");
         return false;
       }
