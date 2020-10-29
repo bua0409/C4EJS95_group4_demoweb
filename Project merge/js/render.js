@@ -55,15 +55,16 @@ const renderDetailUserInfo = (currentUser) => {
 
 const renderListRoomByHotel = (id) => {
   let htmlString = "";
-  for (let i = 0; i < listRooms.length; i++) {
+  const rooms = getRoomsByHotelId(id);
+  for (let i = 0; i < rooms.length; i++) {
     htmlString += `<tr>
                       <td>${i + 1}</td>
                       <td><img
-                          src="${listRooms[i].picture}"
+                          src="${rooms[i].picture}"
                           width="100px" height="100px"></td>
-                      <td>${listRooms[i].description}</td>
-                      <td>${listRooms[i].numOfPerson}</td>
-                      <td>${listRooms[i].price}</td>
+                      <td>${rooms[i].description}</td>
+                      <td>${rooms[i].numOfPerson}</td>
+                      <td>${rooms[i].price}</td>
                   </tr>`;
   }
   renderListRoom.innerHTML = htmlString;
