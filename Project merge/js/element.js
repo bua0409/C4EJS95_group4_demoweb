@@ -28,9 +28,6 @@ const resPhoneElement = document.getElementById("re-phone-input");
 const resPasswordElement = document.getElementById("re-password-input");
 const resRePasswordElement = document.getElementById("re-rePassword-input");
 
-const userNameDisplay = document.getElementById("up-name");
-const userEmailDisplay = document.getElementById("up-email");
-const userPhoneDisplay = document.getElementById("up-phone");
-
+const userAvatarElement = document.getElementById("user-avatar");
 // popup
 const detailUserInfoElement = document.getElementById("detail-user-info");

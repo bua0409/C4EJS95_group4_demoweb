@@ -8,34 +8,23 @@ const redirectSignupToSignInScreen = () => {
   removeClass(signInScreenElement, "d-none");
 };
 
-const userDataDisplay = () => {
-  userNameDisplay.innerHTML += `<h2 class="font-weight-bold mt-4" id="">${currentLogin[0].name}</h2>`;
-  userEmailDisplay.innerHTML += `<h6 class="text-muted">${currentLogin[0].email}</h6>`;
-  userPhoneDisplay.innerHTML += `<h6 class="text-muted">${currentLogin[0].phone}</h6>`;
-};
-
 const renderDetailUserInfo = (currentUser) => {
   const htmlString = `<div class="row d-flex justify-content-center">
                         <div class="col-md-10 mt-5 pt-5">
                           <div class="row z-depth-3">
                             <div class="col-sm-4 bg-info round-left">
-                              <div class="card-block text-center text-white" id="up-name">
+                              <div class="card-block text-center text-white">
                                 <i class="fas fa-user-tie fa-7x mt-5"></i>
                                 <h4 class="font-weight-bold mt-4" id="">${currentUser.name}</h4>
                               </div>
                             </div>
                             <div class="col-sm-8 bg-white rounded-right">
-                              <h3 class="mt-3 text-center">Information</h3>
+                              <h3 class="mt-3 text-center">Info</h3>
                               <hr class="badge-primary mt-0 w-25" />
-                              <div class="row">
-                                <div class="col-sm-6" id="up-email">
-                                  <p class="font-weight-bold">Email: ${currentUser.email}</p>
-                                  <!-- <h6 class="text-muted">something</h6> -->
-                                </div>
-                                <div class="col-sm-6" id="up-phone">
-                                  <p class="font-weight-bold">Phone: ${currentUser.phone}</p>
-                                  <!-- <h6 class="text-muted">something</h6> -->
-                                </div>
+                              <div class="row p-3">
+                                  <p class="font-weight-bold mt-3">Email: ${currentUser.email}</p>
+                                  <br><br>
+                                  <p class="font-weight-bold mt-3">Phone: ${currentUser.phone}</p>
                               </div>
                               <h4 class="mt-3">About me</h4>
                               <hr class="bg-primary" />

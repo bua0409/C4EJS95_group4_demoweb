@@ -12,7 +12,8 @@ loginButtonElement.addEventListener("click", () => {
       } else if (user.role === "user") {
         addClass(loginPageElement, "d-none");
         removeClass(userPageElement, "d-none"); //user page
-        userDataDisplay();
+        removeClass(userAvatarElement, "d-none");
+        // userDataDisplay();
         return;
       }
     }
