@@ -45,3 +45,27 @@ const listUser = [
     role: "hotel",
   },
 ];
+
+const reviewsHotel = [
+  {
+    id: 1,
+    hotelId: 1,
+    userId: 1,
+    comment: "Good",
+    star: 4,
+  },
+  {
+    id: 2,
+    hotelId: 1,
+    userId: 1,
+    comment: "Bad",
+    star: 2,
+  },
+  {
+    id: 3,
+    hotelId: 1,
+    userId: 2,
+    comment: "Good",
+    star: 4,
+  },
+];
