@@ -7,12 +7,14 @@ loginButtonElement.addEventListener("click", () => {
       currentUser = user;
       if (user.role === "hotel") {
         addClass(loginPageElement, "d-none");
+        removeClass(navMenuElement, "d-none");
+        renderListRoomByHotel(currentUser.id);
         // removeClass(); // hotel page
         return;
       } else if (user.role === "user") {
         addClass(loginPageElement, "d-none");
         removeClass(userPageElement, "d-none"); //user page
-        removeClass(userAvatarElement, "d-none");
+        removeClass(navMenuElement, "d-none");
         // userDataDisplay();
         return;
       }
@@ -57,6 +59,22 @@ signupButtonSubmitElement.addEventListener("click", () => {
 });
 
 btnShowDetailUserInfoElement.addEventListener("click", () => {
-  console.log("current user ===>", currentUser);
   renderDetailUserInfo(currentUser);
+});
+
+btnSubmitAddRoomElement.addEventListener("click", () => {
+  const formAddRoom = {
+    numOfPerson: addRoomNumberPersonElement.value,
+    description: addRoomDescriptionElement.value,
+    price: addRoomPriceElement.value,
+    picture: addRoomPictureElement.value,
+    userId: currentUser.id,
+  };
+
+  // validate input
+
+  listRooms.push(formAddRoom);
+
+  console.log("list room ====>", listRooms);
+  renderListRoomByHotel(currentUser.id);
 });
