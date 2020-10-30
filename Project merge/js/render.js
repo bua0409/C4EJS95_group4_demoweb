@@ -26,7 +26,7 @@ const renderDetailUserInfo = (currentUser) => {
                                   <br><br>
                                   <p class="font-weight-bold mt-3">Phone: ${currentUser.phone}</p>
                               </div>
-                              <h4 class="mt-3">About me</h4>
+                              <h4 class="mt-3">About</h4>
                               <hr class="bg-primary" />
                               <div class="row">
                                 <div class="p-3">

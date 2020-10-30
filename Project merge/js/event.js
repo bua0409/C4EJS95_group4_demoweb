@@ -6,27 +6,26 @@ loginButtonElement.addEventListener("click", () => {
     if (user.user === username && user.pass === password) {
       currentUser = user;
       if (user.role === "hotel") {
+        removeClass(detailUserInfoScreenElement, "d-none");
         addClass(loginPageElement, "d-none");
         removeClass(navMenuElement, "d-none");
-        addClass(userPageElement, "d-none");
+        // addClass(userPageElement, "d-none");
         removeClass(hotelPageElement, "d-none");
         renderListRoomByHotel(currentUser.id);
         // removeClass(); // hotel page
         return;
       } else if (user.role === "user") {
+        removeClass(detailUserInfoScreenElement, "d-none");
         addClass(loginPageElement, "d-none");
         removeClass(userPageElement, "d-none"); //user page
         removeClass(navMenuElement, "d-none");
         addClass(btnAddRoomElement, "d-none");
-        // userDataDisplay();
         return;
       }
     }
   }
   alert("Invalid username and/or password");
 });
-
-//check naming
 
 signupButtonElement.addEventListener("click", () => {
   redirectSignInToSignupScreen();

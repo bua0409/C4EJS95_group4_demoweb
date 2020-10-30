@@ -1,268 +1,436 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    />
+    <!-- import md bootstrap -->
+    <link rel="stylesheet" href="./css/md-bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/md-bootstrap/mdb.min.css" />
+    <link rel="stylesheet" href="./css/md-bootstrap/style.css" />
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/js/mdb.min.js"
+    ></script>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
-  <!-- import md bootstrap -->
-  <link rel="stylesheet" href="./css/md-bootstrap/bootstrap.min.css" />
-  <link rel="stylesheet" href="./css/md-bootstrap/mdb.min.css" />
-  <link rel="stylesheet" href="./css/md-bootstrap/style.css" />
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/js/mdb.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"
+    ></script>
+    <!-- Bootstrap core JavaScript -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"
+    ></script>
+    <!-- your css -->
+    <link rel="stylesheet" href="./css/index.css" />
+    <!-- your js -->
+    <script src="./js/data.js"></script>
+    <script src="./js/validate.js"></script>
+    <script defer src="./js/event.js"></script>
+    <script src="./js/index.js"></script>
+    <title>Document</title>
+  </head>
 
-  <!-- Bootstrap tooltips -->
-  <script type="text/javascript"
-    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
-  <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript"
-    src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
-  <!-- your css -->
-  <link rel="stylesheet" href="./css/index.css" />
-  <!-- your js -->
-  <script src="./js/data.js"></script>
-  <script src="./js/validate.js"></script>
-  <script defer src="./js/event.js"></script>
-  <script src="./js/index.js"></script>
-  <title>Document</title>
-</head>
-
-<body>
-  <!-- Navbar -->
-  <nav class="mb-1 navbar navbar-expand-lg navbar-dark info-color lighten-1">
-    <a class="navbar-brand ml-3" href="#">BOOKING.NOW</a>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
-      <ul id="nav-menu" class="navbar-nav ml-auto nav-flex-icons d-none">
-        <li>
-          <button id="btn-add-room" data-toggle="modal" data-target="#popupAddNewRoom">AddRoom</button>
-        </li>
-        <li class="nav-item avatar">
-          <img id="btn-popup-detail-user-info" src="https://mdbootstrap.com/img/Photos/Avatars/avatar-5.jpg"
-            class="rounded-circle z-depth-0 ml-3" alt="avatar image" height="35" data-toggle="modal"
-            data-target="#popupDetailUserInfo" style="cursor: pointer" />
-        </li>
-      </ul>
-    </div>
-  </nav>
-  <!-- End of Navbar -->
-  <main>
-    <div id="login-page">
-      <div id="sign-in-screen">
-        <div class="text-center border border-light p-5 container">
-          <p class="h4 mb-4">SIGN IN</p>
-          <!-- user name -->
-          <input id="username-field" type="text" class="form-control mb-4" name="user name" placeholder="Username" />
-          <!-- Password -->
-          <input id="password-field" type="password" class="form-control mb-4" name="password" placeholder="Password" />
-          <div class="d-flex justify-content-around">
-            <div class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input" id="defaultLoginFormRemember" />
-              <label class="custom-control-label" for="defaultLoginFormRemember">Remember me</label>
-            </div>
-            <a href="">Forgot password?</a>
-          </div>
-
-          <!-- Sign in button -->
-          <button id="login-form-submit" class="btn btn-info btn-block my-4">
-            Sign in
-          </button>
-          <!-- Register -->
-          <span>
-            Not a member?
-            <a id="btn-sign-up" href="#">Register</a>
-          </span>
-          <!-- Social login -->
-          <p>or sign in with:</p>
-          <a href="#" class="mx-2" role="button"><i class="fab fa-facebook-f light-blue-text"></i></a>
-          <a href="#" class="mx-2" role="button"><i class="fab fa-twitter light-blue-text"></i></a>
-          <a href="#" class="mx-2" role="button"><i class="fab fa-linkedin-in light-blue-text"></i></a>
-          <a href="#" class="mx-2" role="button"><i class="fab fa-github light-blue-text"></i></a>
-        </div>
+  <body>
+    <!-- Navbar -->
+    <nav class="mb-1 navbar navbar-expand-lg navbar-dark info-color lighten-1">
+      <a class="navbar-brand ml-3" href="#">BOOKING.NOW</a>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
+        <ul id="nav-menu" class="navbar-nav ml-auto nav-flex-icons d-none">
+          <li>
+            <button
+              id="btn-add-room"
+              data-toggle="modal"
+              data-target="#popupAddNewRoom"
+            >
+              AddRoom
+            </button>
+          </li>
+          <li class="nav-item avatar">
+            <img
+              id="btn-popup-detail-user-info"
+              src="https://mdbootstrap.com/img/Photos/Avatars/avatar-5.jpg"
+              class="rounded-circle z-depth-0 ml-3"
+              alt="avatar image"
+              height="35"
+              data-toggle="modal"
+              data-target="#popupDetailUserInfo"
+              style="cursor: pointer"
+            />
+          </li>
+        </ul>
       </div>
-      <div id="sign-up-screen" class="d-none">
-        <div class="text-center border border-light p-5">
-          <p class="h4 mb-4">Sign up</p>
-          <!-- Name -->
-          <input id="re-name-input" type="text" class="form-control mb-4" placeholder="Your full name" />
-          <!-- Username -->
-          <input id="re-username-input" type="text" class="form-control mb-4" placeholder="Username" />
-          <!-- E-mail -->
-          <input id="re-email-input" type="email" class="form-control mb-4" placeholder="E-mail" />
-          <!-- Phone number -->
-          <input id="re-phone-input" type="text" class="form-control mb-4" placeholder="Phone number"
-            aria-describedby="defaultRegisterFormPhoneHelpBlock" />
-          <!-- Password -->
-          <input id="re-password-input" type="password" class="form-control mb-4" placeholder="Password"
-            aria-describedby="defaultRegisterFormPasswordHelpBlock" />
-          <!-- <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+    </nav>
+    <!-- End of Navbar -->
+    <main>
+      <div id="login-page">
+        <div id="sign-in-screen">
+          <div class="text-center border border-light p-5 container">
+            <p class="h4 mb-4">SIGN IN</p>
+            <!-- user name -->
+            <input
+              id="username-field"
+              type="text"
+              class="form-control mb-4"
+              name="user name"
+              placeholder="Username"
+            />
+            <!-- Password -->
+            <input
+              id="password-field"
+              type="password"
+              class="form-control mb-4"
+              name="password"
+              placeholder="Password"
+            />
+            <div class="d-flex justify-content-around">
+              <div class="custom-control custom-checkbox">
+                <input
+                  type="checkbox"
+                  class="custom-control-input"
+                  id="defaultLoginFormRemember"
+                />
+                <label
+                  class="custom-control-label"
+                  for="defaultLoginFormRemember"
+                  >Remember me</label
+                >
+              </div>
+              <a href="">Forgot password?</a>
+            </div>
+
+            <!-- Sign in button -->
+            <button id="login-form-submit" class="btn btn-info btn-block my-4">
+              Sign in
+            </button>
+            <!-- Register -->
+            <span>
+              Not a member?
+              <a id="btn-sign-up" href="#">Register</a>
+            </span>
+            <!-- Social login -->
+            <p>or sign in with:</p>
+            <a href="#" class="mx-2" role="button"
+              ><i class="fab fa-facebook-f light-blue-text"></i
+            ></a>
+            <a href="#" class="mx-2" role="button"
+              ><i class="fab fa-twitter light-blue-text"></i
+            ></a>
+            <a href="#" class="mx-2" role="button"
+              ><i class="fab fa-linkedin-in light-blue-text"></i
+            ></a>
+            <a href="#" class="mx-2" role="button"
+              ><i class="fab fa-github light-blue-text"></i
+            ></a>
+          </div>
+        </div>
+        <div id="sign-up-screen" class="d-none">
+          <div class="text-center border border-light p-5">
+            <p class="h4 mb-4">Sign up</p>
+            <!-- Name -->
+            <input
+              id="re-name-input"
+              type="text"
+              class="form-control mb-4"
+              placeholder="Your full name"
+            />
+            <!-- Username -->
+            <input
+              id="re-username-input"
+              type="text"
+              class="form-control mb-4"
+              placeholder="Username"
+            />
+            <!-- E-mail -->
+            <input
+              id="re-email-input"
+              type="email"
+              class="form-control mb-4"
+              placeholder="E-mail"
+            />
+            <!-- Phone number -->
+            <input
+              id="re-phone-input"
+              type="text"
+              class="form-control mb-4"
+              placeholder="Phone number"
+              aria-describedby="defaultRegisterFormPhoneHelpBlock"
+            />
+            <!-- Password -->
+            <input
+              id="re-password-input"
+              type="password"
+              class="form-control mb-4"
+              placeholder="Password"
+              aria-describedby="defaultRegisterFormPasswordHelpBlock"
+            />
+            <!-- <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
                         At least 8 characters and 1 digit
                     </small> -->
-          <!-- Password -->
-          <input id="re-rePassword-input" type="password" class="form-control" placeholder="Re-password"
-            aria-describedby="defaultRegisterFormPasswordHelpBlock" />
-          <!-- Sign up button -->
-          <button id="btn-signup-submit" class="btn btn-info my-4 btn-block">
-            Sign up
-          </button>
-          <!-- Social register -->
-          <p>
-            or sign up with:
-            <span><button onclick="redirectSignupToSignInScreen()">
-                Your account
-              </button></span>
-          </p>
-          <a href="#" class="mx-2" role="button"><i class="fab fa-facebook-f light-blue-text"></i></a>
-          <a href="#" class="mx-2" role="button"><i class="fab fa-twitter light-blue-text"></i></a>
-          <a href="#" class="mx-2" role="button"><i class="fab fa-linkedin-in light-blue-text"></i></a>
-          <a href="#" class="mx-2" role="button"><i class="fab fa-github light-blue-text"></i></a>
-          <hr />
-          <!-- Terms of service -->
-          <p>
-            By clicking <em>Sign up</em> you agree to our
-            <a href="" target="_blank">terms of service</a>
-          </p>
-        </div>
-      </div>
-    </div>
-    <!-- User page section -->
-    <div id="user-page" >
-      <!-- popup -->
-      <div class="modal fade" id="popupDetailUserInfo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div id="detail-user-info" class="modal-dialog" role="document">
-          <!-- user detail info -->
-        </div>
-      </div>
-    </div>
-    <!-- End of User page section -->
-    <div id="hotel-page" class="d-none"
-      <h1>Hotel Rooms</h1>
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Picture</th>
-            <th scope="col">Description</th>
-            <th scope="col">Number of person</th>
-            <th scope="col">Price</th>
-            <th scope="col">Review</th>
-          </tr>
-        </thead>
-        <tbody id="render-list-rooms">
-
-        </tbody>
-      </table>
-
-      <!-- popup -->
-      <div class="modal fade" id="popupAddNewRoom" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Nhập thông tin phòng</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <div class="form-group">
-                <label>Number of person</label>
-                <input id="add-room-number-person-input" type="number" class="form-control" min="1" max="15"
-                step="1" placeholder="Người">
-              </div>
-              <div class="form-group">
-                <label>Description</label>
-                <input id="add-room-description-input" type="text" class="form-control">
-              </div>
-              <div class="form-group">
-                <label>Price</label>
-                <input id="add-room-price-input" type="number" class="form-control" min="500000" max="10000000"
-                  step="1000000" placeholder="VNĐ">
-              </div>
-              <div class="form-group">
-                <input type="file" accept="image/*" onchange="loadFile(event)">
-                <img width="100px" height="100px" id="preview-picture" />
-              </div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button id="btn-submit-add-room" type="button" class="btn btn-primary">Save changes</button>
-            </div>
+            <!-- Password -->
+            <input
+              id="re-rePassword-input"
+              type="password"
+              class="form-control"
+              placeholder="Re-password"
+              aria-describedby="defaultRegisterFormPasswordHelpBlock"
+            />
+            <!-- Sign up button -->
+            <button id="btn-signup-submit" class="btn btn-info my-4 btn-block">
+              Sign up
+            </button>
+            <!-- Social register -->
+            <p>
+              or sign up with:
+              <span
+                ><button onclick="redirectSignupToSignInScreen()">
+                  Your account
+                </button></span
+              >
+            </p>
+            <a href="#" class="mx-2" role="button"
+              ><i class="fab fa-facebook-f light-blue-text"></i
+            ></a>
+            <a href="#" class="mx-2" role="button"
+              ><i class="fab fa-twitter light-blue-text"></i
+            ></a>
+            <a href="#" class="mx-2" role="button"
+              ><i class="fab fa-linkedin-in light-blue-text"></i
+            ></a>
+            <a href="#" class="mx-2" role="button"
+              ><i class="fab fa-github light-blue-text"></i
+            ></a>
+            <hr />
+            <!-- Terms of service -->
+            <p>
+              By clicking <em>Sign up</em> you agree to our
+              <a href="" target="_blank">terms of service</a>
+            </p>
           </div>
         </div>
       </div>
 
-    </div>
-  </main>
-
-  <!-- Footer -->
-  <footer class="page-footer font-small info-color pt-4">
-    <!-- Footer Links -->
-    <div class="container-fluid text-center text-md-left">
-      <!-- Grid row -->
-      <div class="row">
-        <!-- Grid column -->
-        <div class="col-md-6 mt-md-0 mt-3">
-          <!-- Content -->
-          <h5 class="text-uppercase">ABOUT US</h5>
-          <p>
-            Team 6 dolor sit amet, consectetur adipisicing elit. Obcaecati
-            rerum aspernatur, reiciendis deserunt ea reprehenderit sapiente
-            iste provident vero voluptate debitis laudantium dolore
-            repudiandae molestias fugiat quisquam vitae quia! Consequatur.
-          </p>
+      <!-- popup -->
+      <div id="detail-user-info-screen" class="d-none">
+        <div
+          class="modal fade"
+          id="popupDetailUserInfo"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div id="detail-user-info" class="modal-dialog" role="document">
+            <!-- user detail info -->
+          </div>
         </div>
-        <!-- Grid column -->
-
-        <hr class="clearfix w-100 d-md-none pb-3" />
-
-        <!-- Grid column -->
-        <div class="col-md-3 mb-md-0 mb-3">
-          <!-- Links -->
-          <h5 class="text-uppercase">ADDRESS</h5>
-
-          <ul class="list-unstyled">
-            <li>
-              <a href="#!"><i class="fas fa-map-marker-alt"></i> 22C Thanh Cong, Ba
-                Dinh, Ha Noi.</a>
-            </li>
-          </ul>
-        </div>
-        <!-- Grid column -->
-
-        <!-- Grid column -->
-        <div class="col-md-3 mb-md-0 mb-3">
-          <!-- Links -->
-          <h5 class="text-uppercase">Links</h5>
-
-          <ul class="list-unstyled">
-            <li>
-              <a href="#"><i class="fab fa-facebook-f px-3 h4"></i>FACEBOOK</a>
-            </li>
-            <li>
-              <a href="#"><i class="fab fa-instagram px-3 h4"></i>INSTAGRAM</a>
-            </li>
-            <li>
-              <a href="#"><i class="fab fa-youtube px-3 h4"></i>YOUTUBE</a>
-            </li>
-          </ul>
-        </div>
-        <!-- Grid column -->
       </div>
-      <!-- Grid row -->
-    </div>
-    <!-- Footer Links -->
+      <!-- User page section -->
+      <div id="user-page">
+        <!-- popup -->
+        <!-- <div
+          class="modal fade"
+          id="popupDetailUserInfo"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div id="detail-user-info" class="modal-dialog" role="document">
+             user detail info
+          </div>
+        </div>-->
+      </div>
+      <!-- End of User page section -->
+      <!-- Hotel page section -->
+      <div id="hotel-page" class="d-none">
+        <h2 class="h1 text-center mb-5">Hotel Rooms</h2>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Picture</th>
+              <th scope="col">Description</th>
+              <th scope="col">Number of person</th>
+              <th scope="col">Price</th>
+              <th scope="col">Review</th>
+            </tr>
+          </thead>
+          <tbody id="render-list-rooms"></tbody>
+        </table>
 
-    <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">© 2020 Copyright</div>
-    <!-- Copyright -->
-  </footer>
-  <!-- End of Footer -->
-  <script src="./js/element.js"></script>
-  <script src="./js/common.js"></script>
-  <script src="./js/render.js"></script>
-</body>
+        <!-- popup -->
+        <div
+          class="modal fade"
+          id="popupAddNewRoom"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">
+                  Nhập thông tin phòng
+                </h5>
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="form-group">
+                  <label>Number of person</label>
+                  <input
+                    id="add-room-number-person-input"
+                    type="number"
+                    class="form-control"
+                    min="1"
+                    max="15"
+                    step="1"
+                    placeholder="Người"
+                  />
+                </div>
+                <div class="form-group">
+                  <label>Description</label>
+                  <input
+                    id="add-room-description-input"
+                    type="text"
+                    class="form-control"
+                  />
+                </div>
+                <div class="form-group">
+                  <label>Price</label>
+                  <input
+                    id="add-room-price-input"
+                    type="number"
+                    class="form-control"
+                    min="500000"
+                    max="10000000"
+                    step="1000000"
+                    placeholder="VNĐ"
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="file"
+                    accept="image/*"
+                    onchange="loadFile(event)"
+                  />
+                  <img width="100px" height="100px" id="preview-picture" />
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button
+                  id="btn-submit-add-room"
+                  type="button"
+                  class="btn btn-primary"
+                >
+                  Save changes
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
 
+    <!-- Footer -->
+    <footer class="page-footer font-small info-color pt-4">
+      <!-- Footer Links -->
+      <div class="container-fluid text-center text-md-left">
+        <!-- Grid row -->
+        <div class="row">
+          <!-- Grid column -->
+          <div class="col-md-6 mt-md-0 mt-3">
+            <!-- Content -->
+            <h5 class="text-uppercase">ABOUT US</h5>
+            <p>
+              Team 6 dolor sit amet, consectetur adipisicing elit. Obcaecati
+              rerum aspernatur, reiciendis deserunt ea reprehenderit sapiente
+              iste provident vero voluptate debitis laudantium dolore
+              repudiandae molestias fugiat quisquam vitae quia! Consequatur.
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <hr class="clearfix w-100 d-md-none pb-3" />
+
+          <!-- Grid column -->
+          <div class="col-md-3 mb-md-0 mb-3">
+            <!-- Links -->
+            <h5 class="text-uppercase">ADDRESS</h5>
+
+            <ul class="list-unstyled">
+              <li>
+                <a href="#!"
+                  ><i class="fas fa-map-marker-alt"></i> 22C Thanh Cong, Ba
+                  Dinh, Ha Noi.</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-3 mb-md-0 mb-3">
+            <!-- Links -->
+            <h5 class="text-uppercase">Links</h5>
+
+            <ul class="list-unstyled">
+              <li>
+                <a href="#"
+                  ><i class="fab fa-facebook-f px-3 h4"></i>FACEBOOK</a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><i class="fab fa-instagram px-3 h4"></i>INSTAGRAM</a
+                >
+              </li>
+              <li>
+                <a href="#"><i class="fab fa-youtube px-3 h4"></i>YOUTUBE</a>
+              </li>
+            </ul>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+      <!-- Footer Links -->
+
+      <!-- Copyright -->
+      <div class="footer-copyright text-center py-3">© 2020 Copyright</div>
+      <!-- Copyright -->
+    </footer>
+    <!-- End of Footer -->
+    <script src="./js/element.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/render.js"></script>
+  </body>
 </html>

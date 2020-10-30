@@ -9,6 +9,9 @@ const hotelPageElement = document.getElementById("hotel-page");
 const signInScreenElement = document.getElementById("sign-in-screen");
 const signUpScreenElement = document.getElementById("sign-up-screen");
 const addRoomScreenElement = document.getElementById("add-room-screen");
+const detailUserInfoScreenElement = document.getElementById(
+  "detail-user-info-screen"
+);
 
 /*button*/
 const loginFormElement = document.getElementById("login-form");
