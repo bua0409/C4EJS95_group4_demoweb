@@ -8,6 +8,8 @@ loginButtonElement.addEventListener("click", () => {
       if (user.role === "hotel") {
         addClass(loginPageElement, "d-none");
         removeClass(navMenuElement, "d-none");
+        addClass(userPageElement, "d-none");
+        removeClass(hotelPageElement, "d-none");
         renderListRoomByHotel(currentUser.id);
         // removeClass(); // hotel page
         return;
@@ -15,6 +17,7 @@ loginButtonElement.addEventListener("click", () => {
         addClass(loginPageElement, "d-none");
         removeClass(userPageElement, "d-none"); //user page
         removeClass(navMenuElement, "d-none");
+        addClass(btnAddRoomElement, "d-none");
         // userDataDisplay();
         return;
       }
