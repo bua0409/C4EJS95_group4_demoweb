@@ -85,5 +85,6 @@ btnSubmitAddRoomElement.addEventListener("click", () => {
     addRoomDescriptionElement.value = "";
     addRoomPriceElement.value = "";
     previewPicture.src = "";
+    previewPictureUploadElement.value = "";
   }
 });

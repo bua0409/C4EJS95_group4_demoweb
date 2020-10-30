@@ -46,6 +46,9 @@ const addRoomDescriptionElement = document.getElementById(
 );
 const addRoomPriceElement = document.getElementById("add-room-price-input");
 const previewPicture = document.getElementById("preview-picture");
+const previewPictureUploadElement = document.getElementById(
+  "preview-picture-upload"
+);
 
 const userAvatarElement = document.getElementById("user-avatar");
 // popup
