@@ -64,12 +64,15 @@ btnShowDetailUserInfoElement.addEventListener("click", () => {
 
 btnSubmitAddRoomElement.addEventListener("click", () => {
   const formAddRoom = {
-    numOfPerson: addRoomNumberPersonElement.value,
+    numOfPerson: parseInt(addRoomNumberPersonElement.value),
     description: addRoomDescriptionElement.value,
-    price: addRoomPriceElement.value,
+    price: parseInt(addRoomPriceElement.value),
     picture: previewPicture.src,
     userId: currentUser.id,
   };
+
+  const isValidateAddRoomOk = validateAddRoomForm(formAddRoom);
+   if(isValidateAddRoomOk){
 
   // validate input
 
@@ -77,4 +80,10 @@ btnSubmitAddRoomElement.addEventListener("click", () => {
 
   console.log("list room ====>", listRooms);
   renderListRoomByHotel(currentUser.id);
-});
+  addRoomNumberPersonElement.value = "";
+  addRoomDescriptionElement.value ="";
+  addRoomPriceElement.value="";
+  previewPicture.src="";
+
+
+}});
