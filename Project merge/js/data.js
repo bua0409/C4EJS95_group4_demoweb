@@ -51,18 +51,36 @@ const listRooms = [
     picture:
       "https://d2e5ushqwiltxm.cloudfront.net/wp-content/uploads/sites/95/2016/12/21105513/MH_Grand_Premium.jpg",
     numOfPerson: 2,
-    description: "Đẹp",
-    price: 1e6,
+    description: "Free wifi, 1 single bed, room area: 30m², bathroom with shower & bathtub, no smoking",
+    price: 3e5,
     userId: 5,
+  },
+  {
+    picture:
+    "https://pix6.agoda.net/hotelImages/5082490/84447935/b3293e754bd76e93ceace4f96602cc7a.jpg?s=1024x768",
+    numOfPerson: 2,
+    description: "Free wifi, 1 large double bed, room area: 30m², bathroom with shower & bathtub, no smoking",
+    price: 4e5,
+    userId: 5,
+
   },
   {
     picture:
       "https://d2e5ushqwiltxm.cloudfront.net/wp-content/uploads/sites/95/2016/12/21145815/3546883_XL-3.jpg",
     numOfPerson: 5,
-    description: "Đẹp",
+    description: "Free wifi, 1 large double bed, room area: 30m², bathroom with shower & bathtub, no smoking",
     price: 5e5,
     userId: 4,
   },
+  {
+    picture:
+    "https://d2e5ushqwiltxm.cloudfront.net/wp-content/uploads/sites/95/2016/12/21145815/3546883_XL-3.jpg",
+    numOfPerson: 1,
+    description: "Free wifi, 1 single bed, room area: 25m², bathroom with shower & bathtub.",
+    price: 3e5,
+    userId: 4,
+
+  }
 ];
 
 const reviewsHotel = [

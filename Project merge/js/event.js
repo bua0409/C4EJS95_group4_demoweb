@@ -84,6 +84,8 @@ btnSubmitAddRoomElement.addEventListener("click", () => {
     addRoomNumberPersonElement.value = "";
     addRoomDescriptionElement.value = "";
     addRoomPriceElement.value = "";
-    previewPicture.src = "";
+    previewPicture.src = "";   
   }
+  popupAddNewRoom.style.display = "none";
+
 });
