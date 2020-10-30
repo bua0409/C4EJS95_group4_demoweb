@@ -53,6 +53,7 @@ const previewPictureUploadElement = document.getElementById(
 const userAvatarElement = document.getElementById("user-avatar");
 // popup
 const detailUserInfoElement = document.getElementById("detail-user-info");
+const popupAddNewRoom = document.getElementById("popupAddNewRoom");
 
 // render
 const renderListRoom = document.getElementById("render-list-rooms");
