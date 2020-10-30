@@ -12,7 +12,7 @@ const pushdata = (data) => {
 const loadFile = function (event) {
   const reader = new FileReader();
   reader.onload = function () {
-    picture.src = reader.result;
+    previewPicture.src = reader.result;
   };
   reader.readAsDataURL(event.target.files[0]);
 };

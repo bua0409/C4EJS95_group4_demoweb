@@ -15,3 +15,7 @@ const getIdByUser = (user) => {
 const getUserById = (userId) => {
   return listUser.find((data) => data.id === userId);
 };
+
+const getRoomsByHotelId = (id) => {
+  return listRooms.filter((room) => room.userId === id);
+};

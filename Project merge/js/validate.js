@@ -32,3 +32,30 @@ function validateRegisterForm(registerForm) {
   }
   return true;
 }
+
+
+//validateAddRoom
+
+function validateAddRoomForm(formAddRoom){
+  if (!formAddRoom.numOfPerson) {
+    alert("Number of person required.");
+    return false;
+  } else if(formAddRoom.numOfPerson < 1|| formAddRoom.numOfPerson > 15){
+    alert("Number of person must be between 1 and 15");
+    return false;
+  } else if(!formAddRoom.description){
+    alert("Description required.");
+    return false;
+  } else if(!formAddRoom.price){
+    alert("Price required.");
+    return false;
+  } else if(formAddRoom.price<50000|| formAddRoom.price>10000000){
+    alert("Price must be between 50000 and 10000000")
+    return false;
+  }
+  else if(!formAddRoom.picture){
+    alert("Picture required");
+    return false;
+  }
+  return true;
+}
