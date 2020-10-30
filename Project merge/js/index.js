@@ -19,3 +19,15 @@ const getUserById = (userId) => {
 const getRoomsByHotelId = (id) => {
   return listRooms.filter((room) => room.userId === id);
 };
+
+const getRoomById = (id) => {
+  return listRooms.find((room) => room.id === id);
+};
+
+const getListHotel = () => {
+  return listUser.filter((user) => user.role === "hotel");
+};
+
+const getReviewsByHotelId = (hotelId) => {
+  return reviewsHotel.filter((review) => review.userId === hotelId);
+};

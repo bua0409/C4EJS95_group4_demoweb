@@ -20,6 +20,7 @@ loginButtonElement.addEventListener("click", () => {
         removeClass(userPageElement, "d-none"); //user page
         removeClass(navMenuElement, "d-none");
         addClass(btnAddRoomElement, "d-none");
+        renderListHotels();
         return;
       }
     }
@@ -66,7 +67,7 @@ btnShowDetailUserInfoElement.addEventListener("click", () => {
 
 btnSubmitAddRoomElement.addEventListener("click", () => {
   const formAddRoom = {
-    numOfPerson: parseInt(addRoomNumberPersonElement.value),
+    numberOfPerson: parseInt(addRoomNumberPersonElement.value),
     description: addRoomDescriptionElement.value,
     price: parseInt(addRoomPriceElement.value),
     picture: previewPicture.src,
@@ -79,13 +80,8 @@ btnSubmitAddRoomElement.addEventListener("click", () => {
 
     listRooms.push(formAddRoom);
 
-    console.log("list room ====>", listRooms);
     renderListRoomByHotel(currentUser.id);
-    addRoomNumberPersonElement.value = "";
-    addRoomDescriptionElement.value = "";
-    addRoomPriceElement.value = "";
-    previewPicture.src = "";
-    previewPictureUploadElement.value = "";
+    clearFormAddRoom();
+    $("#popupAddNewRoom").modal("hide");
   }
-  popupAddNewRoom.style.display = 'none';
 });

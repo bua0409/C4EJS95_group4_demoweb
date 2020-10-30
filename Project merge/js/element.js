@@ -56,4 +56,8 @@ const detailUserInfoElement = document.getElementById("detail-user-info");
 const popupAddNewRoom = document.getElementById("popupAddNewRoom");
 
 // render
-const renderListRoom = document.getElementById("render-list-rooms");
+const renderListRoomElement = document.getElementById("render-list-rooms");
+const renderListHotelElement = document.getElementById("render-list-hotels");
+const renderListRoomBookingElement = document.getElementById(
+  "render-list-room-booking"
+);
