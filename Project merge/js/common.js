@@ -9,6 +9,13 @@ const pushdata = (data) => {
   Element.listUser.push(data);
 };
 
+// const getUserById = (id) => {
+//   return user.find((data) => data.id === id);
+// };
+// const getHotelById = (id) => {
+//   return hotel.find((data) => data.id === id);
+// };
+
 const loadFile = function (event) {
   const reader = new FileReader();
   reader.onload = function () {

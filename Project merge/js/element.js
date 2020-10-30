@@ -12,6 +12,7 @@ const addRoomScreenElement = document.getElementById("add-room-screen");
 const detailUserInfoScreenElement = document.getElementById(
   "detail-user-info-screen"
 );
+const userReviewScreenElement = document.getElementById("user-review-screen");
 
 /*button*/
 const loginFormElement = document.getElementById("login-form");
@@ -23,7 +24,7 @@ const btnShowDetailUserInfoElement = document.getElementById(
 );
 const btnAddRoomElement = document.getElementById("btn-add-room");
 const btnSubmitAddRoomElement = document.getElementById("btn-submit-add-room");
-
+const btnBackElement = document.getElementById("btn-back");
 /*input field*/
 //login element
 const loginErrorMsgElement = document.getElementById("login-error-msg");

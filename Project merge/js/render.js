@@ -53,6 +53,33 @@ const renderDetailUserInfo = (currentUser) => {
   detailUserInfoElement.innerHTML = htmlString;
 };
 
+const renderReviewsList = (index) => {
+  if (currentUser.role === "hotel") {
+    removeClass(userReviewScreenElement, "d-none");
+    removeClass(btnBackElement, "d-none");
+    addClass(hotelPageElement, "d-none");
+  }
+  userReviewScreenElement.innerHTML += `<h2 class="h1 text-center mb-5">REVIEWS</h2>`;
+  for (let i = 0; i < reviewsHotel.length; i++) {
+    let getId = document.getElementById(index).getAttribute("hotelId");
+    if (parseInt(getId) === reviewsHotel[i].hotelId) {
+      const htmlString = `<div class="col-lg-7 col-xl-7 ml-xl-4 mb-4">
+            <h3 class="mb-3 font-weight-bold dark-grey-text">
+              <strong>${getUserById(reviewsHotel[i].userId).name}</strong>
+            </h3>
+            <p>${reviewsHotel[i].rating}</p>
+            <p>
+              <strong
+                >${reviewsHotel[i].comment}
+              </strong>
+            </p>
+            <hr class="mb-5" />
+          </div>`;
+      userReviewScreenElement.innerHTML += htmlString;
+    }
+  }
+};
+
 const renderListRoomByHotel = (id) => {
   let htmlString = "";
   const rooms = getRoomsByHotelId(id);
@@ -65,7 +92,9 @@ const renderListRoomByHotel = (id) => {
                       <td>${rooms[i].description}</td>
                       <td>${rooms[i].numOfPerson}</td>
                       <td>${rooms[i].price}</td>
-                      <td><button>Reviews</button></td>
+                      <td><button id="${i}" reviewId ="${i}" hotelId="${
+      rooms[i].userId
+    }" onclick="renderReviewsList(${i})">Reviews</button></td>
                   </tr>`;
   }
   renderListRoom.innerHTML = htmlString;

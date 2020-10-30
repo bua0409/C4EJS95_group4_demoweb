@@ -64,6 +64,13 @@ btnShowDetailUserInfoElement.addEventListener("click", () => {
   renderDetailUserInfo(currentUser);
 });
 
+btnBackElement.addEventListener("click", () => {
+  addClass(userReviewScreenElement, "d-none");
+  addClass(btnBackElement, "d-none");
+  removeClass(hotelPageElement, "d-none");
+  userReviewScreenElement.innerHTML = "";
+});
+
 btnSubmitAddRoomElement.addEventListener("click", () => {
   const formAddRoom = {
     numOfPerson: parseInt(addRoomNumberPersonElement.value),
