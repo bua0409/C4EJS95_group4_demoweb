@@ -3,7 +3,7 @@ const navMenuElement = document.getElementById("nav-menu");
 //page
 const loginPageElement = document.getElementById("login-page");
 const userPageElement = document.getElementById("user-page");
-const hotelPageElement = document.getElementById("hotel-page")
+const hotelPageElement = document.getElementById("hotel-page");
 
 //screen
 const signInScreenElement = document.getElementById("sign-in-screen");

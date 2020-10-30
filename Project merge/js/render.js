@@ -65,6 +65,7 @@ const renderListRoomByHotel = (id) => {
                       <td>${rooms[i].description}</td>
                       <td>${rooms[i].numOfPerson}</td>
                       <td>${rooms[i].price}</td>
+                      <td><button>Reviews</button></td>
                   </tr>`;
   }
   renderListRoom.innerHTML = htmlString;

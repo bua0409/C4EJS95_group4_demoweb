@@ -75,18 +75,16 @@ btnSubmitAddRoomElement.addEventListener("click", () => {
   };
 
   const isValidateAddRoomOk = validateAddRoomForm(formAddRoom);
-   if(isValidateAddRoomOk){
+  if (isValidateAddRoomOk) {
+    // validate input
 
-  // validate input
+    listRooms.push(formAddRoom);
 
-  listRooms.push(formAddRoom);
-
-  console.log("list room ====>", listRooms);
-  renderListRoomByHotel(currentUser.id);
-  addRoomNumberPersonElement.value = "";
-  addRoomDescriptionElement.value ="";
-  addRoomPriceElement.value="";
-  previewPicture.src="";
-
-
-}});
+    console.log("list room ====>", listRooms);
+    renderListRoomByHotel(currentUser.id);
+    addRoomNumberPersonElement.value = "";
+    addRoomDescriptionElement.value = "";
+    addRoomPriceElement.value = "";
+    previewPicture.src = "";
+  }
+});
