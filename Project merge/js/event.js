@@ -87,4 +87,5 @@ btnSubmitAddRoomElement.addEventListener("click", () => {
     previewPicture.src = "";
     previewPictureUploadElement.value = "";
   }
+  popupAddNewRoom.style.display = 'none';
 });
