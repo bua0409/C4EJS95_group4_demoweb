@@ -57,7 +57,10 @@
               data-toggle="modal"
               data-target="#popupAddNewRoom"
             >
-              AddRoom
+              Add Room
+            </button>
+            <button id="btn-logout" onclick="resetAll()" class="d-none">
+              Logout
             </button>
           </li>
           <li class="nav-item avatar">
@@ -240,14 +243,59 @@
         </div>
       </div>
       <!-- User page section -->
-      <div id="user-page">
-        <!-- Review page section -->
+      <div id="user-page" class="px-2 pt-2 d-none">
+        <!--Grid row-->
+        <div id="render-list-hotels"></div>
+        <div id="render-list-room-booking" class="d-none">
+          <div class="table-responsive">
+            <table class="table product-table">
+              <!-- Table head -->
+              <thead class="mdb-color lighten-5">
+                <tr>
+                  <th></th>
+                  <th class="font-weight-bold">
+                    <strong>Room</strong>
+                  </th>
+                  <th></th>
+                  <th class="font-weight-bold">
+                    <strong>Price</strong>
+                  </th>
+                  <th class="font-weight-bold">
+                    <strong>Quantity</strong>
+                  </th>
+                  <th class="font-weight-bold">
+                    <strong>Total Price</strong>
+                  </th>
+                  <th class="font-weight-bold">
+                    <strong>Action</strong>
+                  </th>
+                </tr>
+              </thead>
+              <!-- /.Table head -->
 
-        <!-- End of Review page section -->
+              <!-- Table body -->
+              <tbody id="body-table-payment">
+                <!-- render row -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- popup -->
+        <!-- <div
+          class="modal fade"
+          id="popupDetailUserInfo"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div id="detail-user-info" class="modal-dialog" role="document">
+             user detail info
+          </div>
+        </div>-->
       </div>
       <!-- End of User page section -->
       <!-- Hotel page section -->
-      <div id="user-review-screen" class="container d-none"></div>
       <div id="hotel-page" class="d-none">
         <h2 class="h1 text-center mb-5">Hotel Rooms</h2>
         <table class="table">

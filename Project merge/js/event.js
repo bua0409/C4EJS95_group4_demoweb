@@ -1,25 +1,33 @@
 loginButtonElement.addEventListener("click", () => {
   const username = usernameElement.value;
   const password = passwordElement.value;
+  // usernameElement.value = "";
+  // passwordElement.value = "";
   //validate
   for (const user of listUser) {
     if (user.user === username && user.pass === password) {
       currentUser = user;
       if (user.role === "hotel") {
+        usernameElement.value = "";
+        passwordElement.value = "";
         removeClass(detailUserInfoScreenElement, "d-none");
         addClass(loginPageElement, "d-none");
         removeClass(navMenuElement, "d-none");
         // addClass(userPageElement, "d-none");
         removeClass(hotelPageElement, "d-none");
         renderListRoomByHotel(currentUser.id);
-        // removeClass(); // hotel page
+        removeClass(btnLogoutElement, "d-none");
         return;
       } else if (user.role === "user") {
+        usernameElement.value = "";
+        passwordElement.value = "";
         removeClass(detailUserInfoScreenElement, "d-none");
         addClass(loginPageElement, "d-none");
-        removeClass(userPageElement, "d-none"); //user page
+        removeClass(userPageElement, "d-none");
         removeClass(navMenuElement, "d-none");
         addClass(btnAddRoomElement, "d-none");
+        removeClass(btnLogoutElement, "d-none");
+        renderListHotels();
         return;
       }
     }
@@ -73,7 +81,7 @@ btnBackElement.addEventListener("click", () => {
 
 btnSubmitAddRoomElement.addEventListener("click", () => {
   const formAddRoom = {
-    numOfPerson: parseInt(addRoomNumberPersonElement.value),
+    numberOfPerson: parseInt(addRoomNumberPersonElement.value),
     description: addRoomDescriptionElement.value,
     price: parseInt(addRoomPriceElement.value),
     picture: previewPicture.src,
@@ -86,12 +94,8 @@ btnSubmitAddRoomElement.addEventListener("click", () => {
 
     listRooms.push(formAddRoom);
 
-    console.log("list room ====>", listRooms);
     renderListRoomByHotel(currentUser.id);
-    addRoomNumberPersonElement.value = "";
-    addRoomDescriptionElement.value = "";
-    addRoomPriceElement.value = "";
-    previewPicture.src = "";
-    previewPictureUploadElement.value = "";
+    clearFormAddRoom();
+    $("#popupAddNewRoom").modal("hide");
   }
 });

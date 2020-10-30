@@ -9,12 +9,22 @@ const pushdata = (data) => {
   Element.listUser.push(data);
 };
 
-// const getUserById = (id) => {
-//   return user.find((data) => data.id === id);
-// };
-// const getHotelById = (id) => {
-//   return hotel.find((data) => data.id === id);
-// };
+const clearFormAddRoom = () => {
+  addRoomNumberPersonElement.value = "";
+  addRoomDescriptionElement.value = "";
+  addRoomPriceElement.value = "";
+  previewPicture.src = "";
+  previewPictureUploadElement.value = "";
+};
+
+const resetAll = () => {
+  removeClass(loginPageElement, "d-none");
+  addClass(userPageElement, "d-none");
+  addClass(hotelPageElement, "d-none");
+  addClass(btnLogoutElement, "d-none");
+  addClass(btnAddRoomElement, "d-none");
+  addClass(btnShowDetailUserInfoElement, "d-none");
+};
 
 const loadFile = function (event) {
   const reader = new FileReader();

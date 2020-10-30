@@ -97,5 +97,92 @@ const renderListRoomByHotel = (id) => {
     }" onclick="renderReviewsList(${i})">Reviews</button></td>
                   </tr>`;
   }
-  renderListRoom.innerHTML = htmlString;
+  renderListRoomElement.innerHTML = htmlString;
+};
+
+const renderListHotels = () => {
+  let htmlString = "";
+  const hotels = getListHotel();
+  for (let i = 0; i < hotels.length; i++) {
+    htmlString += `<div class="row mb-2">
+                    <div class="col-md-5 mb-4 mb-md-0">
+                        <img src="${hotels[i].hotelInfo.picture}" class="img-fluid" alt="" >
+                    </div>
+                    <div class="col-md-4 mb-4 mb-md-0">
+                      <h3 class="font-weight-bold">${hotels[i].hotelInfo.name}</h3>
+                      <p><i class="fas fa-map-marked">${hotels[i].hotelInfo.place}</i></p>
+                      <p><i class="fas fa-star">${hotels[i].hotelInfo.stars}</i></p>
+                      <p><i class="fas fa-phone-square">${hotels[i].hotelInfo.phone}</i></p>
+                      <button class="btn btn-brown btn-md ml-0" href="#" role="button" onclick="renderListRoomBooking(${hotels[i].id})">Travel<i class="fa fa-plane ml-2"></i></button>
+                    </div>
+                    <div class="col-md-3">
+                      review hotel
+                    </div>
+                  </div>`;
+  }
+  renderListHotelElement.innerHTML = htmlString;
+};
+
+const renderListRoomBooking = (hotelId) => {
+  addClass(renderListHotelElement, "d-none");
+  removeClass(renderListRoomBookingElement, "d-none");
+  let htmlString = "";
+  const rooms = getRoomsByHotelId(hotelId);
+  roomsBooking = [...rooms];
+  const tablePaymentElement = document.getElementById("body-table-payment");
+  for (let i = 0; i < roomsBooking.length; i++) {
+    roomsBooking[i].totalPrice = 0;
+    roomsBooking[i].quantityDays = 0;
+    htmlString += `
+                    <tr>
+                    <td scope="row">
+                        <img src="${roomsBooking[i].picture}" alt=""
+                            width="100" height="100" class="img-fluid z-depth-0">
+                    </td>
+                    <td>
+                        <h5>
+                            <strong>${roomsBooking[i].userId}</strong>
+                        </h5>
+                        <p class="text-muted">${roomsBooking[i].name}</p>
+                    </td>
+                    <td></td>
+                    <td>
+                        <h5><strong>$${roomsBooking[i].price}</strong></h5>
+                    </td>
+                    <td>
+                        <input type="number" value="${roomsBooking[i].quantityDays}" aria-label="Search" class="form-control" style="width: 100px"
+                            min="1" max="10" onchange="" />
+                    </td>
+                    <td class="font-weight-bold">
+                        <h5><strong>$${roomsBooking[i].totalPrice}</strong></h5>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-sm btn-primary" data-toggle="tooltip" data-placement="top"
+                            title="Remove item">X
+                        </button>
+                    </td>
+                </tr>
+
+    `;
+  }
+  htmlString += ` <!-- footer table -->
+  <tr>
+      <td colspan="3"></td>
+      <td>
+          <h4 class="mt-2">
+              <strong>Total</strong>
+          </h4>
+      </td>
+      <td class="text-right">
+          <h4 class="mt-2">
+              <strong>$2600</strong>
+          </h4>
+      </td>
+      <td colspan="3" class="text-right">
+          <button type="button" class="btn btn-primary btn-rounded">Complete purchase
+              <i class="fas fa-angle-right right"></i>
+          </button>
+      </td>
+  </tr>`;
+  tablePaymentElement.innerHTML = htmlString;
 };

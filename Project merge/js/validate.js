@@ -36,10 +36,13 @@ function validateRegisterForm(registerForm) {
 //validateAddRoom
 
 function validateAddRoomForm(formAddRoom) {
-  if (!formAddRoom.numOfPerson) {
+  if (!formAddRoom.numberOfPerson) {
     alert("Number of person required.");
     return false;
-  } else if (formAddRoom.numOfPerson < 1 || formAddRoom.numOfPerson > 15) {
+  } else if (
+    formAddRoom.numberOfPerson < 1 ||
+    formAddRoom.numberOfPerson > 15
+  ) {
     alert("Number of person must be between 1 and 15");
     return false;
   } else if (!formAddRoom.description) {
