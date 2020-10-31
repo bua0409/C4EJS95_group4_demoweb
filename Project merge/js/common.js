@@ -10,6 +10,7 @@ const pushdata = (data) => {
 };
 
 const clearFormAddRoom = () => {
+  addRoomNameRoomElement.value = "";
   addRoomNumberPersonElement.value = "";
   addRoomDescriptionElement.value = "";
   addRoomPriceElement.value = "";
