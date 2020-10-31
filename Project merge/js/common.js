@@ -29,6 +29,8 @@ const resetAll = () => {
   addClass(btnLogoutElement, "d-none");
   addClass(btnAddRoomElement, "d-none");
   addClass(detailUserInfoScreenElement, "d-none");
+  addClass(btnShowDetailUserInfoElement, "d-none");
+  addClass(btnHotelReviewsElement, "d-none");
 };
 
 const loadFile = function (event) {

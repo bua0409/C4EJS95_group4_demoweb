@@ -10,6 +10,8 @@ loginButtonElement.addEventListener("click", () => {
       if (user.role === "hotel") {
         usernameElement.value = "";
         passwordElement.value = "";
+        removeClass(btnHotelReviewsElement, "d-none");
+        removeClass(btnShowDetailUserInfoElement, "d-none");
         removeClass(detailUserInfoScreenElement, "d-none");
         addClass(loginPageElement, "d-none");
         removeClass(navMenuElement, "d-none");
@@ -22,6 +24,7 @@ loginButtonElement.addEventListener("click", () => {
       } else if (user.role === "user") {
         usernameElement.value = "";
         passwordElement.value = "";
+        removeClass(btnShowDetailUserInfoElement, "d-none");
         removeClass(detailUserInfoScreenElement, "d-none");
         addClass(loginPageElement, "d-none");
         removeClass(userPageElement, "d-none");

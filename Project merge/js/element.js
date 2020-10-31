@@ -32,6 +32,7 @@ const btnLogoutElement = document.getElementById("btn-logout");
 const btnBackToListHotelsScreenElement = document.getElementById(
   "btn-back-to-list-hotels-screen"
 );
+const btnHotelReviewsElement = document.getElementById("btn-hotel-review");
 /*input field*/
 //login element
 const loginErrorMsgElement = document.getElementById("login-error-msg");

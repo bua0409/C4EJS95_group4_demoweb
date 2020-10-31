@@ -9,7 +9,8 @@ const listUser = [
     role: "hotel",
     hotelInfo: {
       name: "Muong Thanh Saigon Centre Hotel",
-      picture: "https://cf.bstatic.com/images/hotel/max1024x768/627/62768875.jpg",
+      picture:
+        "https://cf.bstatic.com/images/hotel/max1024x768/627/62768875.jpg",
       stars: 4,
       place: "Sai Gon",
       phone: "0123456789",
@@ -60,7 +61,8 @@ const listUser = [
     role: "hotel",
     hotelInfo: {
       name: "Sofitel Legend Metropole Ha Noi",
-      picture: "https://d2e5ushqwiltxm.cloudfront.net/wp-content/uploads/sites/95/2016/12/07091321/HotelMetropoleHanoi-585x390.jpg",
+      picture:
+        "https://d2e5ushqwiltxm.cloudfront.net/wp-content/uploads/sites/95/2016/12/07091321/HotelMetropoleHanoi-585x390.jpg",
       stars: 4,
       place: "Ha noi",
       phone: "0123456635",
@@ -85,10 +87,11 @@ const listUser = [
     role: "hotel",
     hotelInfo: {
       name: "Du Parc Hotel Dalat",
-      picture: "https://media-cdn.tripadvisor.com/media/photo-s/04/8b/7b/8f/dalat-hotel-du-parc.jpg",
+      picture:
+        "https://media-cdn.tripadvisor.com/media/photo-s/04/8b/7b/8f/dalat-hotel-du-parc.jpg",
       stars: 4,
       place: "Da Lat",
-      phone: '0123456778',
+      phone: "0123456778",
     },
   },
 ];
@@ -200,7 +203,7 @@ const listRooms = [
     place: "Ha Noi",
   },
   {
-      id: 3,
+    id: 3,
     userId: 4,
     name: "Opera Wing_Grand Premium",
     picture:
@@ -216,53 +219,50 @@ const listRooms = [
   },
   {
     id: 4,
-  userId: 7,
-  name: "Standard",
-  picture:
-    "https://staticproxy.mytourcdn.com/480x360,q90/resources/pictures/hotels/17/QK6iPGlWSGOXKhnVdgjxxw-12-Du%2520Parc%2520Hotel%2520Dalat%2520-%2520Standard%2520room%2520%281%29.jpeg",
-  stars: 5,
-  numberOfPerson: 2,
-  numberOfRoom: 2,
-  description:
-    "Free wifi, 1 dougle bed, room area: 32m², bathroom with shower & bathtub, no smoking",
-  price: 3e3,
-  phone: '0123456778',
-  place: "Da Lat",
+    userId: 7,
+    name: "Standard",
+    picture:
+      "https://staticproxy.mytourcdn.com/480x360,q90/resources/pictures/hotels/17/QK6iPGlWSGOXKhnVdgjxxw-12-Du%2520Parc%2520Hotel%2520Dalat%2520-%2520Standard%2520room%2520%281%29.jpeg",
+    stars: 5,
+    numberOfPerson: 2,
+    numberOfRoom: 2,
+    description:
+      "Free wifi, 1 dougle bed, room area: 32m², bathroom with shower & bathtub, no smoking",
+    price: 3e3,
+    phone: "0123456778",
+    place: "Da Lat",
   },
   {
     id: 4,
-  userId: 7,
-  name: "Superior",
-  picture:
-    "https://staticproxy.mytourcdn.com/480x360,q90/resources/pictures/hotels/17/R3g-ZzAbQ-eHIXxut5GaEg-14-Du%2520Parc%2520Hotel%2520Dalat-Superior%2520twin%2520room.jpeg",
-  stars: 5,
-  numberOfPerson: 2,
-  numberOfRoom: 2,
-  description:
-    "Free wifi, 2 single bed, room area: 30m², bathroom with shower & bathtub, no smoking",
-  price: 4e3,
-  phone: '0123456778',
-  place: "Da Lat",
+    userId: 7,
+    name: "Superior",
+    picture:
+      "https://staticproxy.mytourcdn.com/480x360,q90/resources/pictures/hotels/17/R3g-ZzAbQ-eHIXxut5GaEg-14-Du%2520Parc%2520Hotel%2520Dalat-Superior%2520twin%2520room.jpeg",
+    stars: 5,
+    numberOfPerson: 2,
+    numberOfRoom: 2,
+    description:
+      "Free wifi, 2 single bed, room area: 30m², bathroom with shower & bathtub, no smoking",
+    price: 4e3,
+    phone: "0123456778",
+    place: "Da Lat",
   },
   {
     id: 4,
-  userId: 7,
-  name: "Deluxe",
-  picture:
-    "https://staticproxy.mytourcdn.com/480x360,q90/resources/pictures/hotels/17/QK6iPGlWSGOXKhnVdgjxxw-17-Du%2520Parc%2520Hotel%2520Dalat%2520-%2520Deluxe%2520room%2520%282%29.jpeg",
-  stars: 5,
-  numberOfPerson: 2,
-  numberOfRoom: 2,
-  description:
-    "Free wifi, 1 dougle bed, room area: 30m², bathroom with shower & bathtub, no smoking",
-  price: 45e2,
-  phone: '0123456778',
-  place: "Da Lat",
+    userId: 7,
+    name: "Deluxe",
+    picture:
+      "https://staticproxy.mytourcdn.com/480x360,q90/resources/pictures/hotels/17/QK6iPGlWSGOXKhnVdgjxxw-17-Du%2520Parc%2520Hotel%2520Dalat%2520-%2520Deluxe%2520room%2520%282%29.jpeg",
+    stars: 5,
+    numberOfPerson: 2,
+    numberOfRoom: 2,
+    description:
+      "Free wifi, 1 dougle bed, room area: 30m², bathroom with shower & bathtub, no smoking",
+    price: 45e2,
+    phone: "0123456778",
+    place: "Da Lat",
   },
-  
-
 ];
-
 
 const reviewsHotel = [
   {
@@ -292,6 +292,22 @@ const reviewsHotel = [
   {
     id: 3,
     hotelId: 5,
+    reviewId: 2,
+    userId: 6,
+    comment: "i feel like this room is from heaven",
+    rating: "Good",
+  },
+  {
+    id: 2,
+    hotelId: 7,
+    reviewId: 2,
+    userId: 3,
+    comment: "dont book this room",
+    rating: "Bad",
+  },
+  {
+    id: 3,
+    hotelId: 7,
     reviewId: 2,
     userId: 6,
     comment: "i feel like this room is from heaven",
