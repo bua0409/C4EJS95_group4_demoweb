@@ -89,6 +89,7 @@ const renderListRoomByHotel = (id) => {
                       <td><img
                           src="${rooms[i].picture}"
                           width="100px" height="100px"></td>
+                      <td>${rooms[i].name}</td>
                       <td>${rooms[i].description}</td>
                       <td>${rooms[i].numberOfPerson}</td>
                       <td>${rooms[i].price}</td>
