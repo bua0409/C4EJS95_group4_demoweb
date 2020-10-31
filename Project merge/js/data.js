@@ -26,7 +26,7 @@ const listUser = [
   },
   {
     id: 1,
-    name: "User Two",
+    name: "Trần Ngọc Toàn",
     email: "username1@gmail.com",
     user: "username1",
     pass: "123tnvn",
@@ -35,7 +35,7 @@ const listUser = [
   },
   {
     id: 2,
-    name: "User Three",
+    name: "Đức",
     email: "username2@gmail.com",
     user: "username2",
     pass: "123tnvn1",
@@ -44,7 +44,7 @@ const listUser = [
   },
   {
     id: 3,
-    name: "User Four",
+    name: "Hùng",
     email: "username3@gmail.com",
     user: "username3",
     pass: "123tnvn2",
