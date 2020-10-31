@@ -82,6 +82,7 @@ btnBackElement.addEventListener("click", () => {
 
 btnSubmitAddRoomElement.addEventListener("click", () => {
   const formAddRoom = {
+    name : addRoomNameRoomElement.value,
     numberOfPerson: parseInt(addRoomNumberPersonElement.value),
     description: addRoomDescriptionElement.value,
     price: parseInt(addRoomPriceElement.value),
