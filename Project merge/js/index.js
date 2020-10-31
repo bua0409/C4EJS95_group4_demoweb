@@ -31,3 +31,41 @@ const getListHotel = () => {
 const getReviewsByHotelId = (hotelId) => {
   return reviewsHotel.filter((review) => review.userId === hotelId);
 };
+
+const increaseDayBookingRoom = (roomBooking) => {
+  roomsBooking = [...roomsBooking].map((item) =>
+    item.id === roomBooking.id
+      ? {
+          ...roomBooking,
+          quantityDays: roomBooking.quantityDays + 1,
+        }
+      : item
+  );
+  renderChangeRoomBooking();
+};
+
+const decreaseDayBookingRoom = (roomBooking) => {
+  roomsBooking = [...roomsBooking].map((item) =>
+    item.id === roomBooking.id
+      ? {
+          ...roomBooking,
+          quantityDays:
+            roomBooking.quantityDays > 0 ? roomBooking.quantityDays - 1 : 0,
+        }
+      : item
+  );
+  renderChangeRoomBooking();
+};
+
+const calculateFinalPaymentBookingRooms = () => {
+  let sumFinalPayment = 0;
+  for (const item of roomsBooking) {
+    sumFinalPayment += item.quantityDays * item.price;
+  }
+  return sumFinalPayment;
+};
+
+const removeRoomBookingById = (roomId) => {
+  roomsBooking = roomsBooking.filter((item) => item.id !== roomId);
+  renderChangeRoomBooking();
+};

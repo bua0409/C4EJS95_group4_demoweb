@@ -14,6 +14,9 @@ const detailUserInfoScreenElement = document.getElementById(
 );
 const userReviewScreenElement = document.getElementById("user-review-screen");
 
+//Room Booking
+const tablePaymentElement = document.getElementById("body-table-payment");
+
 /*button*/
 const loginFormElement = document.getElementById("login-form");
 const loginButtonElement = document.getElementById("login-form-submit");
@@ -26,7 +29,9 @@ const btnAddRoomElement = document.getElementById("btn-add-room");
 const btnSubmitAddRoomElement = document.getElementById("btn-submit-add-room");
 const btnBackElement = document.getElementById("btn-back");
 const btnLogoutElement = document.getElementById("btn-logout");
-
+const btnBackToListHotelsScreenElement = document.getElementById(
+  "btn-back-to-list-hotels-screen"
+);
 /*input field*/
 //login element
 const loginErrorMsgElement = document.getElementById("login-error-msg");
@@ -52,7 +57,9 @@ const previewPicture = document.getElementById("preview-picture");
 const previewPictureUploadElement = document.getElementById(
   "preview-picture-upload"
 );
-const addRoomNameRoomElement = document.getElementById("add-room-name-room-input");
+const addRoomNameRoomElement = document.getElementById(
+  "add-room-name-room-input"
+);
 
 const userAvatarElement = document.getElementById("user-avatar");
 // popup
