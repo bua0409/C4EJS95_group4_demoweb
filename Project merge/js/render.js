@@ -90,7 +90,7 @@ const renderListRoomByHotel = (id) => {
                           src="${rooms[i].picture}"
                           width="100px" height="100px"></td>
                       <td>${rooms[i].description}</td>
-                      <td>${rooms[i].numOfPerson}</td>
+                      <td>${rooms[i].numberOfPerson}</td>
                       <td>${rooms[i].price}</td>
                       <td><button id="${i}" reviewId ="${i}" hotelId="${
       rooms[i].userId
