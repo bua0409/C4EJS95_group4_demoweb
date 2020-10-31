@@ -140,12 +140,11 @@ const renderListRoomBooking = (hotelId) => {
                             width="100" height="100" class="img-fluid z-depth-0">
                     </td>
                     <td>
-                        <h5>
-                            <strong>${roomsBooking[i].userId}</strong>
-                        </h5>
                         <p class="text-muted">${roomsBooking[i].name}</p>
                     </td>
-                    <td></td>
+                    <td>
+                    <h5><strong>${roomsBooking[i].numberOfPerson}</strong></h5>
+                    </td>
                     <td>
                         <h5><strong>$${roomsBooking[i].price}</strong></h5>
                     </td>
@@ -186,3 +185,4 @@ const renderListRoomBooking = (hotelId) => {
   </tr>`;
   tablePaymentElement.innerHTML = htmlString;
 };
+
