@@ -52,6 +52,7 @@ const previewPicture = document.getElementById("preview-picture");
 const previewPictureUploadElement = document.getElementById(
   "preview-picture-upload"
 );
+const addRoomNameRoomElement = document.getElementById("add-room-name-room-input");
 
 const userAvatarElement = document.getElementById("user-avatar");
 // popup
