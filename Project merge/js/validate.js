@@ -36,7 +36,10 @@ function validateRegisterForm(registerForm) {
 //validateAddRoom
 
 function validateAddRoomForm(formAddRoom) {
-  if (!formAddRoom.numberOfPerson) {
+  if (!formAddRoom.name) {
+    alert("Name required.");
+    return false;
+  } else if (!formAddRoom.numberOfPerson) {
     alert("Number of person required.");
     return false;
   } else if (
@@ -53,9 +56,6 @@ function validateAddRoomForm(formAddRoom) {
     return false;
   } else if (!formAddRoom.picture) {
     alert("Picture required.");
-    return false;
-  } else if (formAddRoom.price < 50000 || formAddRoom.price > 10000000) {
-    alert("Price must be between 50000 and 10000000");
     return false;
   } else if (!formAddRoom.picture) {
     alert("Picture required");
