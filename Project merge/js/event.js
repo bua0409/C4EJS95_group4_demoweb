@@ -17,6 +17,7 @@ loginButtonElement.addEventListener("click", () => {
         removeClass(hotelPageElement, "d-none");
         renderListRoomByHotel(currentUser.id);
         removeClass(btnLogoutElement, "d-none");
+        removeClass(btnAddRoomElement, "d-none");
         return;
       } else if (user.role === "user") {
         usernameElement.value = "";
