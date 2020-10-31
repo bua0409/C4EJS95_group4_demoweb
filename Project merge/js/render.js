@@ -1,3 +1,5 @@
+let roomsBooking = [];
+
 const redirectSignInToSignupScreen = () => {
   addClass(signInScreenElement, "d-none");
   removeClass(signUpScreenElement, "d-none");
@@ -6,6 +8,18 @@ const redirectSignInToSignupScreen = () => {
 const redirectSignupToSignInScreen = () => {
   addClass(signUpScreenElement, "d-none");
   removeClass(signInScreenElement, "d-none");
+};
+
+const redirectBookingRoomToListHotelsScreen = () => {
+  addClass(renderListRoomBookingElement, "d-none");
+  addClass(btnBackToListHotelsScreenElement, "d-none");
+  removeClass(renderListHotelElement, "d-none");
+};
+
+const redirectListHotelsToBookingRoomsScreen = () => {
+  addClass(renderListHotelElement, "d-none");
+  removeClass(renderListRoomBookingElement, "d-none");
+  removeClass(btnBackToListHotelsScreenElement, "d-none");
 };
 
 const renderDetailUserInfo = (currentUser) => {
@@ -136,12 +150,10 @@ const renderListHotels = () => {
 };
 
 const renderListRoomBooking = (hotelId) => {
-  addClass(renderListHotelElement, "d-none");
-  removeClass(renderListRoomBookingElement, "d-none");
+  redirectListHotelsToBookingRoomsScreen();
   let htmlString = "";
   const rooms = getRoomsByHotelId(hotelId);
   roomsBooking = [...rooms];
-  const tablePaymentElement = document.getElementById("body-table-payment");
   for (let i = 0; i < roomsBooking.length; i++) {
     roomsBooking[i].totalPrice = 0;
     roomsBooking[i].quantityDays = 0;
@@ -161,14 +173,31 @@ const renderListRoomBooking = (hotelId) => {
                         <h5><strong>$${roomsBooking[i].price}</strong></h5>
                     </td>
                     <td>
-                        <input type="number" value="${roomsBooking[i].quantityDays}" aria-label="Search" class="form-control" style="width: 100px"
-                            min="1" max="10" onchange="" />
+                      <span class="qty">${roomsBooking[i].quantityDays}</span>
+                      <div class="btn-group mr-2 btn-group-sm" role="group" aria-label="First group">
+                        <button onclick="decreaseDayBookingRoom(${JSON.stringify(
+                          roomsBooking[i]
+                        )
+                          .split('"')
+                          .join(
+                            "&quot;"
+                          )})" type="button" class="btn blue lighten-2"><i class="fas fa-minus" aria-hidden="true"></i></button>
+                        <button onclick="increaseDayBookingRoom(${JSON.stringify(
+                          roomsBooking[i]
+                        )
+                          .split('"')
+                          .join(
+                            "&quot;"
+                          )})" type="button" class="btn blue lighten-2"><i class="fas fa-plus" aria-hidden="true"></i></button>
+                      </div>
                     </td>
                     <td class="font-weight-bold">
                         <h5><strong>$${roomsBooking[i].totalPrice}</strong></h5>
                     </td>
                     <td>
-                        <button type="button" class="btn btn-sm btn-primary" data-toggle="tooltip" data-placement="top"
+                        <button onclick="removeRoomBookingById(${
+                          roomsBooking[i].id
+                        })" type="button" class="btn btn-sm btn-primary" data-toggle="tooltip" data-placement="top"
                             title="Remove item">X
                         </button>
                     </td>
@@ -176,24 +205,102 @@ const renderListRoomBooking = (hotelId) => {
 
     `;
   }
-  htmlString += ` <!-- footer table -->
-  <tr>
-      <td colspan="3"></td>
-      <td>
-          <h4 class="mt-2">
-              <strong>Total</strong>
-          </h4>
-      </td>
-      <td class="text-right">
-          <h4 class="mt-2">
-              <strong>$2600</strong>
-          </h4>
-      </td>
-      <td colspan="3" class="text-right">
-          <button type="button" class="btn btn-primary btn-rounded">Complete purchase
-              <i class="fas fa-angle-right right"></i>
-          </button>
-      </td>
-  </tr>`;
+  htmlString += `
+                <tr>
+                    <td colspan="3"></td>
+                    <td>
+                        <h4 class="mt-2">
+                            <strong>Final payment</strong>
+                        </h4>
+                    </td>
+                    <td class="text-right">
+                        <h4 class="mt-2">
+                            <strong>$0</strong>
+                        </h4>
+                    </td>
+                    <td colspan="3" class="text-right">
+                        <button type="button" class="btn btn-primary btn-rounded">Complete purchase
+                            <i class="fas fa-angle-right right"></i>
+                        </button>
+                    </td>
+                </tr>`;
   tablePaymentElement.innerHTML = htmlString;
 };
+<<<<<<< HEAD
+=======
+
+const renderChangeRoomBooking = () => {
+  let htmlString = "";
+  for (let i = 0; i < roomsBooking.length; i++) {
+    roomsBooking[i].totalPrice =
+      roomsBooking[i].quantityDays * roomsBooking[i].price;
+    htmlString += `
+                    <tr>
+                    <td scope="row">
+                        <img src="${roomsBooking[i].picture}" alt=""
+                            width="100" height="100" class="img-fluid z-depth-0">
+                    </td>
+                    <td>
+                        <p class="text-muted">${roomsBooking[i].name}</p>
+                    </td>
+                    <td>
+                    <h5><strong>${roomsBooking[i].numberOfPerson}</strong></h5>
+                    </td>
+                    <td>
+                        <h5><strong>$${roomsBooking[i].price}</strong></h5>
+                    </td>
+                    <td>
+                      <span class="qty">${roomsBooking[i].quantityDays}</span>
+                      <div class="btn-group mr-2 btn-group-sm" role="group" aria-label="First group">
+                        <button onclick="decreaseDayBookingRoom(${JSON.stringify(
+                          roomsBooking[i]
+                        )
+                          .split('"')
+                          .join(
+                            "&quot;"
+                          )})" type="button" class="btn blue lighten-2"><i class="fas fa-minus" aria-hidden="true"></i></button>
+                        <button onclick="increaseDayBookingRoom(${JSON.stringify(
+                          roomsBooking[i]
+                        )
+                          .split('"')
+                          .join(
+                            "&quot;"
+                          )})" type="button" class="btn blue lighten-2"><i class="fas fa-plus" aria-hidden="true"></i></button>
+                      </div>
+                    </td>
+                    <td class="font-weight-bold">
+                        <h5><strong>$${roomsBooking[i].totalPrice}</strong></h5>
+                    </td>
+                    <td>
+                        <button onclick="removeRoomBookingById(${
+                          roomsBooking[i].id
+                        })" type="button" class="btn btn-sm btn-primary" data-toggle="tooltip" data-placement="top"
+                            title="Remove item">X
+                        </button>
+                    </td>
+                </tr>
+
+    `;
+  }
+  htmlString += `
+                <tr>
+                    <td colspan="3"></td>
+                    <td>
+                        <h4 class="mt-2">
+                            <strong>Final payment</strong>
+                        </h4>
+                    </td>
+                    <td class="text-right">
+                        <h4 class="mt-2">
+                            <strong>$${calculateFinalPaymentBookingRooms()}</strong>
+                        </h4>
+                    </td>
+                    <td colspan="3" class="text-right">
+                        <button type="button" class="btn btn-primary btn-rounded">Complete purchase
+                            <i class="fas fa-angle-right right"></i>
+                        </button>
+                    </td>
+                </tr>`;
+  tablePaymentElement.innerHTML = htmlString;
+};
+>>>>>>> f9d884a430713bf432ebdec94c214075d52ca438

@@ -1,8 +1,12 @@
 const removeClass = (element, className) => {
-  element.classList.remove(className);
+  if (element.classList.contains(className)) {
+    element.classList.remove(className);
+  }
 };
 const addClass = (element, className) => {
-  element.classList.add(className);
+  if (!element.classList.contains(className)) {
+    element.classList.add(className);
+  }
 };
 
 const pushdata = (data) => {
@@ -24,7 +28,7 @@ const resetAll = () => {
   addClass(hotelPageElement, "d-none");
   addClass(btnLogoutElement, "d-none");
   addClass(btnAddRoomElement, "d-none");
-  addClass(btnShowDetailUserInfoElement, "d-none");
+  addClass(detailUserInfoScreenElement, "d-none");
 };
 
 const loadFile = function (event) {
