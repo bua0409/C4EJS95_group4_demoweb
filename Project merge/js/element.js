@@ -12,7 +12,7 @@ const addRoomScreenElement = document.getElementById("add-room-screen");
 const detailUserInfoScreenElement = document.getElementById(
   "detail-user-info-screen"
 );
-const userReviewScreenElement = document.getElementById("user-review-screen");
+// const userReviewScreenElement = document.getElementById("user-review-screen");
 
 /*button*/
 const loginFormElement = document.getElementById("login-form");
@@ -52,7 +52,9 @@ const previewPicture = document.getElementById("preview-picture");
 const previewPictureUploadElement = document.getElementById(
   "preview-picture-upload"
 );
-const addRoomNameRoomElement = document.getElementById("add-room-name-room-input");
+const addRoomNameRoomElement = document.getElementById(
+  "add-room-name-room-input"
+);
 
 const userAvatarElement = document.getElementById("user-avatar");
 // popup

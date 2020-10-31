@@ -73,16 +73,9 @@ btnShowDetailUserInfoElement.addEventListener("click", () => {
   renderDetailUserInfo(currentUser);
 });
 
-btnBackElement.addEventListener("click", () => {
-  addClass(userReviewScreenElement, "d-none");
-  addClass(btnBackElement, "d-none");
-  removeClass(hotelPageElement, "d-none");
-  userReviewScreenElement.innerHTML = "";
-});
-
 btnSubmitAddRoomElement.addEventListener("click", () => {
   const formAddRoom = {
-    name : addRoomNameRoomElement.value,
+    name: addRoomNameRoomElement.value,
     numberOfPerson: parseInt(addRoomNumberPersonElement.value),
     description: addRoomDescriptionElement.value,
     price: parseInt(addRoomPriceElement.value),

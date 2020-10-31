@@ -29,5 +29,5 @@ const getListHotel = () => {
 };
 
 const getReviewsByHotelId = (hotelId) => {
-  return reviewsHotel.filter((review) => review.userId === hotelId);
+  return reviewsHotel.filter((review) => review.hotelId === hotelId);
 };

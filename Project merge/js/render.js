@@ -54,23 +54,24 @@ const renderDetailUserInfo = (currentUser) => {
 };
 
 const renderReviewsList = (index) => {
-  if (currentUser.role === "hotel") {
-    removeClass(userReviewScreenElement, "d-none");
-    removeClass(btnBackElement, "d-none");
-    addClass(hotelPageElement, "d-none");
-  }
-  userReviewScreenElement.innerHTML += `<h2 class="h1 text-center mb-5">REVIEWS</h2>`;
-  for (let i = 0; i < reviewsHotel.length; i++) {
-    let getId = document.getElementById(index).getAttribute("hotelId");
-    if (parseInt(getId) === reviewsHotel[i].hotelId) {
-      const htmlString = `<div class="col-lg-7 col-xl-7 ml-xl-4 mb-4">
+  // if (currentUser.role === "hotel") {
+  //   removeClass(userReviewScreenElement, "d-none");
+  //   removeClass(btnBackElement, "d-none");
+  //   addClass(hotelPageElement, "d-none");
+  // }
+  let htmlString = "";
+  const reviews = getReviewsByHotelId(index);
+  console.log(reviews);
+  for (let i = 0; i < reviews.length; i++) {
+    if (index === reviews[i].hotelId) {
+      htmlString = `<div class="col-lg-7 col-xl-7 ml-xl-4 mb-4">
             <h3 class="mb-3 font-weight-bold dark-grey-text">
-              <strong>${getUserById(reviewsHotel[i].userId).name}</strong>
+              <strong>${getUserById(reviews[i].userId).name}</strong>
             </h3>
-            <p>${reviewsHotel[i].rating}</p>
+            <p>${reviews[i].rating}</p>
             <p>
               <strong
-                >${reviewsHotel[i].comment}
+                >${reviews[i].comment}
               </strong>
             </p>
             <hr class="mb-5" />
@@ -95,7 +96,7 @@ const renderListRoomByHotel = (id) => {
                       <td>${rooms[i].price}</td>
                       <td><button id="${i}" reviewId ="${i}" hotelId="${
       rooms[i].userId
-    }" onclick="renderReviewsList(${i})">Reviews</button></td>
+    }">Reviews</button></td>
                   </tr>`;
   }
   renderListRoomElement.innerHTML = htmlString;
@@ -103,6 +104,7 @@ const renderListRoomByHotel = (id) => {
 
 const renderListHotels = () => {
   let htmlString = "";
+  let indexArr = [];
   const hotels = getListHotel();
   for (let i = 0; i < hotels.length; i++) {
     htmlString += `<div class="row mb-2">
@@ -110,18 +112,27 @@ const renderListHotels = () => {
                         <img src="${hotels[i].hotelInfo.picture}" class="img-fluid" alt="" >
                     </div>
                     <div class="col-md-4 mb-4 mb-md-0">
-                      <h3 class="font-weight-bold">${hotels[i].hotelInfo.name}</h3>
-                      <p><i class="fas fa-map-marked">${hotels[i].hotelInfo.place}</i></p>
-                      <p><i class="fas fa-star">${hotels[i].hotelInfo.stars}</i></p>
-                      <p><i class="fas fa-phone-square">${hotels[i].hotelInfo.phone}</i></p>
+                      <h3 class="font-weight-bold">   ${hotels[i].hotelInfo.name}</h3>
+                      <p><i class="fas fa-map-marked">  ${hotels[i].hotelInfo.place}</i></p>
+                      <p><i class="fas fa-star">  ${hotels[i].hotelInfo.stars}</i></p>
+                      <p><i class="fas fa-phone-square">  ${hotels[i].hotelInfo.phone}</i></p>
                       <button class="btn btn-brown btn-md ml-0" href="#" role="button" onclick="renderListRoomBooking(${hotels[i].id})">Travel<i class="fa fa-plane ml-2"></i></button>
+                      <button class="btn btn-brown btn-md ml-0" href="#" role="button" onclick="">Add Review  <i class="fas fa-pencil-alt"></i></button>
                     </div>
                     <div class="col-md-3">
-                      review hotel
+                    <h4 class="font-weight-bold">Reviews Of Hotel</h4>
+                    <div id="user-review-screen-${hotels[i].id}" style="overflow: scroll;overflow-x: hidden;height: 200px">
+
+                    </div>
                     </div>
                   </div>`;
+    indexArr.push(hotels[i].id);
   }
   renderListHotelElement.innerHTML = htmlString;
+  for (let i = 0; i < indexArr.length; i++) {
+    console.log(indexArr[i]);
+    renderReviewsList(indexArr[i]);
+  }
 };
 
 const renderListRoomBooking = (hotelId) => {
@@ -186,4 +197,3 @@ const renderListRoomBooking = (hotelId) => {
   </tr>`;
   tablePaymentElement.innerHTML = htmlString;
 };
-
