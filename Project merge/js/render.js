@@ -226,8 +226,6 @@ const renderListRoomBooking = (hotelId) => {
                 </tr>`;
   tablePaymentElement.innerHTML = htmlString;
 };
-<<<<<<< HEAD
-=======
 
 const renderChangeRoomBooking = () => {
   let htmlString = "";
@@ -303,4 +301,3 @@ const renderChangeRoomBooking = () => {
                 </tr>`;
   tablePaymentElement.innerHTML = htmlString;
 };
->>>>>>> f9d884a430713bf432ebdec94c214075d52ca438
